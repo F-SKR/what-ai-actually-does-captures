@@ -1,0 +1,26 @@
+  [PASS] idle watts 0.1-10 W: 1.01837692634 W (before 1.01285, phase B before 0.84103, after 0.8985705)
+  [PASS] idle under 5 W (background load): 1.01837692634 W
+  [PASS] idle drift <= 0.3: -0.112829639137
+  [PASS] alignment (3 pulses, drift <= 200 ms, residual <= 200 ms): offset 720.0 ms, drift 16.2 ms, check 8.2 ms, method cumulative_elapsed
+  [PASS] no sampler gaps over 1 s: 0
+  [PASS] idle settled after short: 0.97663052666 W
+  [PASS] idle settled after think: 1.024392061 W
+  [PASS] idle settled after long: 1.10446800073 W
+  [PASS] idle settled after longctx: 1.0218481822 W
+  [PASS] idle settled after agent_nocache: 1.08390853233 W
+  [PASS] idle settled after agent_cached: 1.05787369014 W
+  [PASS] cache_n == 0 on every Phase A and nocache request: True
+  [PASS] every cache-off request re-read its whole prompt (prompt_n == prompt_tokens): True
+  [PASS] longctx prompt_n in range: [16033, 16033, 16033, 16033, 16033, 16033, 16033, 16033, 16033, 16033]
+  [PASS] cached arm hits (calls after turn 1 with cache_n > 0) >= 0.8: 1.0
+  [PASS] answers.short complete: n 20/20  tokens in 34.0 out 52.0 (medians)  joules 33.8295755314  spread 0.0756947660798
+  [PASS] answers.think complete: n 10/10  tokens in 30.0 out 214.0 (medians)  joules 127.943171577  spread 0.0801774177787
+  [PASS] answers.long complete: n 10/10  tokens in 47.0 out 1031.5 (medians)  joules 658.35591776  spread 0.0810570787001
+  [PASS] answers.longctx complete: n 10/10  tokens in 16033.0 out 128.5 (medians)  joules 1927.30270714  spread 0.020518704194
+  [PASS] think runs hitting the 8192 cap <= 2: 0
+  [PASS] short spread <= 0.5 and no negative net (else alternative A: block check): spread 0.0756947660798, negative nets 0, block per answer 36.049847159
+  [PASS] thermal: last three long runs within 20 % of the first three: 607.485896917 -> 676.716236284
+  [PASS] agent runs complete: 10/10, passed 2
+         agent.nocache: tokens in 42768 out 1176 (medians), turns {0: 21, 1: 30, 2: 22, 3: 25, 4: 20}, joules 3895.59250767, minutes 2.66608333333
+         agent.cached: tokens in 74512 out 1548 (medians), turns {0: 30, 1: 15, 2: 25, 3: 30, 4: 30}, joules 1474.77404437, minutes 0.978966666667
+OVERALL PASS

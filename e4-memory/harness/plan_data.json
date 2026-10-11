@@ -1,0 +1,263 @@
+{
+ "facts": [
+  {
+   "no": 1,
+   "fact": "The lighthouse keeper's dog is named Biscuit.",
+   "lexical_q": "What is the lighthouse keeper's dog named?",
+   "paraphrase_q": "What do they call the pet that lives with the man who tends the coastal beacon?",
+   "pattern": "biscuit"
+  },
+  {
+   "no": 2,
+   "fact": "The village choir rehearses every Thursday evening.",
+   "lexical_q": "When does the village choir rehearse?",
+   "paraphrase_q": "On which weekday do the singers from the small settlement practise?",
+   "pattern": "thursday"
+  },
+  {
+   "no": 3,
+   "fact": "Professor Hale keeps her rare stamps in a cigar box under the stairs.",
+   "lexical_q": "Where does Professor Hale keep her rare stamps?",
+   "paraphrase_q": "Where is the academic's collection of postage hidden?",
+   "pattern": "cigar"
+  },
+  {
+   "no": 4,
+   "fact": "The garden gate code at Number 12 is 3-8-5-1.",
+   "lexical_q": "What is the garden gate code at Number 12?",
+   "paraphrase_q": "Which digits unlock the yard entrance of the twelfth house on that road?",
+   "pattern": "3\\D?8\\D?5\\D?1"
+  },
+  {
+   "no": 5,
+   "fact": "The ferry to the island leaves at a quarter past six.",
+   "lexical_q": "When does the ferry to the island leave?",
+   "paraphrase_q": "What time does the boat out to that patch of land in the sea depart?",
+   "pattern": "quarter past six|6[:.]15|six[- ]fifteen"
+  },
+  {
+   "no": 6,
+   "fact": "The secret ingredient in Aunt Rosa's soup is smoked paprika.",
+   "lexical_q": "What is the secret ingredient in Aunt Rosa's soup?",
+   "paraphrase_q": "Which spice makes the broth cooked by the mother's sister special?",
+   "pattern": "paprika"
+  },
+  {
+   "no": 7,
+   "fact": "The spare key to the boathouse is kept inside the blue watering can.",
+   "lexical_q": "Where is the spare key to the boathouse kept?",
+   "paraphrase_q": "If I'm locked out of the shed by the lake, where should I look?",
+   "pattern": "watering can"
+  },
+  {
+   "no": 8,
+   "fact": "The museum's oldest clock was built in 1702.",
+   "lexical_q": "When was the museum's oldest clock built?",
+   "paraphrase_q": "In which year was the most ancient timepiece in the gallery made?",
+   "pattern": "1702"
+  },
+  {
+   "no": 9,
+   "fact": "The chess club's trophy is hidden behind the piano.",
+   "lexical_q": "Where is the chess club's trophy hidden?",
+   "paraphrase_q": "Where did the board-game society put its prize cup?",
+   "pattern": "piano"
+  },
+  {
+   "no": 10,
+   "fact": "Doctor Pell's favourite colour is mustard yellow.",
+   "lexical_q": "What is Doctor Pell's favourite colour?",
+   "paraphrase_q": "Which shade does the physician like best?",
+   "pattern": "mustard"
+  },
+  {
+   "no": 11,
+   "fact": "The train from Oldham to Leeds was cancelled because of a flooded tunnel.",
+   "lexical_q": "Why was the train from Oldham to Leeds cancelled?",
+   "paraphrase_q": "What stopped the rail service between those two northern towns from running?",
+   "pattern": "flood"
+  },
+  {
+   "no": 12,
+   "fact": "The library's late fee is forty pence per day.",
+   "lexical_q": "What is the library's late fee?",
+   "paraphrase_q": "How much is charged when a borrowed book comes back after its due date?",
+   "pattern": "forty pence|40 ?p"
+  },
+  {
+   "no": 13,
+   "fact": "The red kite nest is on the third pylon past the quarry.",
+   "lexical_q": "Where is the red kite nest?",
+   "paraphrase_q": "Where have the rust-coloured birds of prey built their home?",
+   "pattern": "pylon"
+  },
+  {
+   "no": 14,
+   "fact": "The bakery's sourdough starter is called Gerald.",
+   "lexical_q": "What is the bakery's sourdough starter called?",
+   "paraphrase_q": "What name was given to the fermenting dough culture at the bread shop?",
+   "pattern": "gerald"
+  },
+  {
+   "no": 15,
+   "fact": "The cottage's water heater is switched off at the fuse marked F4.",
+   "lexical_q": "Which fuse switches off the cottage's water heater?",
+   "paraphrase_q": "Which circuit breaker cuts power to the boiler in the little country house?",
+   "pattern": "\\bf4\\b"
+  },
+  {
+   "no": 16,
+   "fact": "The puzzle hunt's final clue is taped under the bandstand.",
+   "lexical_q": "Where is the puzzle hunt's final clue taped?",
+   "paraphrase_q": "Where is the last hint of the treasure game stuck?",
+   "pattern": "bandstand"
+  },
+  {
+   "no": 17,
+   "fact": "Grandpa Joe's old car is painted sea green.",
+   "lexical_q": "What colour is Grandpa Joe's old car painted?",
+   "paraphrase_q": "What shade is the vintage motor belonging to the elderly man in the family?",
+   "pattern": "sea green"
+  },
+  {
+   "no": 18,
+   "fact": "The school's spring fair raised 2,340 pounds for the roof.",
+   "lexical_q": "How much did the school's spring fair raise for the roof?",
+   "paraphrase_q": "What sum did the April event at the classroom building bring in for repairs overhead?",
+   "pattern": "2,?340"
+  },
+  {
+   "no": 19,
+   "fact": "The orchard's oldest tree is a pear planted in 1931.",
+   "lexical_q": "When was the orchard's oldest tree planted?",
+   "paraphrase_q": "In what year did the most ancient fruit-bearer in that place go into the soil?",
+   "pattern": "1931"
+  },
+  {
+   "no": 20,
+   "fact": "The radio quiz prize this week is a copper kettle.",
+   "lexical_q": "What is the radio quiz prize this week?",
+   "paraphrase_q": "What can the winner of the on-air trivia game take home these seven days?",
+   "pattern": "kettle"
+  }
+ ],
+ "turns": [
+  "I'm building a website for my aunt's bakery, Crumb and Copper. Can you help me plan it?",
+  "The owner is my aunt, Ines Okafor. I'm just helping her out. What pages do we need?",
+  "The main goal is to take online orders for collection on Saturdays. How should the order page work?",
+  "Draft a short welcome paragraph for the home page.",
+  "I've set up a test server on port 8417. What should I check before we put anything on it?",
+  "Our budget is 3,200 euros, all in. What would you spend it on first?",
+  "Suggest a simple menu structure for the products.",
+  "We want to launch on the 14th of March. Give me a rough week-by-week plan.",
+  "The domain is crumbandcopper.nl. What do I need to set up for it?",
+  "We decided on dark green as the main colour, hex 2F6B4F. Suggest two accent colours.",
+  "Write three short product descriptions: sourdough loaf, cinnamon bun, rye bread.",
+  "We'll take payments through Mollie, not PayPal. What does the checkout need?",
+  "The photographer is Sem de Wit. Write him a short brief for the product photos.",
+  "How should we handle allergens on the product pages?",
+  "The ovens limit us to 60 orders per Saturday. How do we stop people ordering more?",
+  "Draft the text for the order confirmation email.",
+  "We decided not to offer gluten-free bread online for now. How do we say that politely?",
+  "What should the About page say?",
+  "Give me a checklist for testing the order flow.",
+  "What questions should I ask my aunt before we build the order page?",
+  "Write the FAQ: opening hours, collection, cancellations.",
+  "How should the page look on a phone?",
+  "Draft a short Instagram post announcing the website.",
+  "What should we track to see if the site works?",
+  "Write the alt text for the three product photos.",
+  "Suggest a simple way to collect customer reviews.",
+  "What legal pages does a small Dutch shop website need?",
+  "Draft a cancellation policy in plain language.",
+  "Make a short list of what could go wrong on launch day.",
+  "Summarise the next three things I should do this week."
+ ],
+ "qfacts": [
+  {
+   "id": "F01",
+   "category": "name",
+   "planted": 1,
+   "question": "What is the bakery called?",
+   "pattern": "crumb (and|&) copper"
+  },
+  {
+   "id": "F02",
+   "category": "name",
+   "planted": 2,
+   "question": "Who owns the bakery?",
+   "pattern": "\\bines\\b|okafor"
+  },
+  {
+   "id": "F03",
+   "category": "gist",
+   "planted": 3,
+   "question": "What is the main goal of the website?",
+   "pattern": "\\bonline orders?\\b|\\borders? online\\b|\\btake orders?\\b|\\bordering\\b"
+  },
+  {
+   "id": "F04",
+   "category": "exact value",
+   "planted": 5,
+   "question": "Which port does the test server run on?",
+   "pattern": "8417"
+  },
+  {
+   "id": "F05",
+   "category": "exact value",
+   "planted": 6,
+   "question": "What is the total budget?",
+   "pattern": "3[,.]?200"
+  },
+  {
+   "id": "F06",
+   "category": "date",
+   "planted": 8,
+   "question": "What is the launch date?",
+   "pattern": "14(th)?.{0,8}march|march.{0,4}14"
+  },
+  {
+   "id": "F07",
+   "category": "exact value",
+   "planted": 9,
+   "question": "What is the website's domain?",
+   "pattern": "crumbandcopper\\.nl"
+  },
+  {
+   "id": "F08",
+   "category": "decision",
+   "planted": 10,
+   "question": "What is the main colour?",
+   "pattern": "2f6b4f|dark green"
+  },
+  {
+   "id": "F09",
+   "category": "decision",
+   "planted": 12,
+   "question": "Which payment provider will we use?",
+   "pattern": "mollie"
+  },
+  {
+   "id": "F10",
+   "category": "name",
+   "planted": 13,
+   "question": "What is the photographer's name?",
+   "pattern": "\\bsem\\b|de wit"
+  },
+  {
+   "id": "F11",
+   "category": "exact value",
+   "planted": 15,
+   "question": "How many orders can we take per Saturday?",
+   "pattern": "\\b60\\b|sixty"
+  },
+  {
+   "id": "F12",
+   "category": "decision",
+   "planted": 17,
+   "question": "Will we sell gluten-free bread online?",
+   "pattern": "\\b(no|won't|will not|not (to )?(offer|sell)\\w*|not for now|against (offering|selling)|decided not)\\b"
+  }
+ ],
+ "dont_know": "don't know|do not know|not sure|unknown|no (information|mention|record|details?)\\b|\\b(was|is|has|have|had|were|are)(n't| not)( been| yet been)? (mentioned|specified|provided|stated|given|decided|discussed|confirmed|shared)|\\bnot (mentioned|specified|provided|stated|given|discussed)\\b|\\b(does|did|do)(n't| not) (say|mention|specify|include|state)|(don't|do not) have (that|this|any|the|enough)|haven't (been told|mentioned)|can('t|not| not) (find|tell|say|determine)|unable to"
+}

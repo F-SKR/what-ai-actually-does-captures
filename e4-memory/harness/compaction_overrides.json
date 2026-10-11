@@ -1,0 +1,65 @@
+[
+ {
+  "arm": "full_history",
+  "seed": 1,
+  "fact": "F03",
+  "answer": "The main goal of the website is to make it easy for customers to order baked goods online for pickup on Saturdays.",
+  "original_label": "confident_wrong",
+  "corrected_label": "correct",
+  "rule": "F03 is correct if it states online ordering in any words"
+ },
+ {
+  "arm": "full_history",
+  "seed": 2,
+  "fact": "F03",
+  "answer": "The main goal of the website is to allow customers to order baked goods online for pickup on Saturdays.",
+  "original_label": "confident_wrong",
+  "corrected_label": "correct",
+  "rule": "F03 is correct if it states online ordering in any words"
+ },
+ {
+  "arm": "compacted",
+  "seed": 3,
+  "fact": "F03",
+  "answer": "The main goal of the website is to make it easy for customers to order baked goods online for Saturday pickup.",
+  "original_label": "confident_wrong",
+  "corrected_label": "correct",
+  "rule": "F03 is correct if it states online ordering in any words"
+ },
+ {
+  "arm": "full_history",
+  "seed": 4,
+  "fact": "F03",
+  "answer": "The main goal of the website is to make it easy for customers to order baked goods online and pick them up on Saturdays.",
+  "original_label": "confident_wrong",
+  "corrected_label": "correct",
+  "rule": "F03 is correct if it states online ordering in any words"
+ },
+ {
+  "arm": "compacted",
+  "seed": 4,
+  "fact": "F03",
+  "answer": "The main goal of the website is to make it easy for customers to order baked goods for Saturday pickup.",
+  "original_label": "confident_wrong",
+  "corrected_label": "correct",
+  "rule": "F03 is correct if it states online ordering in any words (the answer states customers ordering for Saturday pickup as the website's goal; the question asks for the website's goal)"
+ },
+ {
+  "arm": "full_history",
+  "seed": 5,
+  "fact": "F03",
+  "answer": "The main goal of the website is to make it easy for customers to order baked goods online for pickup on Saturdays.",
+  "original_label": "confident_wrong",
+  "corrected_label": "correct",
+  "rule": "F03 is correct if it states online ordering in any words"
+ },
+ {
+  "arm": "compacted",
+  "seed": 7,
+  "fact": "F03",
+  "answer": "The main goal of the website is to take **Saturday collection orders** for Crumb & Copper\u2019s baked goods.",
+  "original_label": "confident_wrong",
+  "corrected_label": "correct",
+  "rule": "F03 is correct if it states online ordering in any words (the answer states customers ordering for Saturday pickup as the website's goal; the question asks for the website's goal)"
+ }
+]

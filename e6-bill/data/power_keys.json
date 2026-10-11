@@ -1,0 +1,14 @@
+{
+ "combined": "processor.combined_power",
+ "parts": [
+  "processor.cpu_power",
+  "processor.gpu_power",
+  "processor.ane_power"
+ ],
+ "package": null,
+ "dram": null,
+ "elapsed": "elapsed_ns",
+ "timestamp": "timestamp",
+ "thermal": null,
+ "unit": "mW"
+}

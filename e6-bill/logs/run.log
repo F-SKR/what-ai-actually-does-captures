@@ -1,0 +1,91 @@
+02:10:21 === phase A start 
+02:10:23 server a up in 2.0 s
+02:10:23 warm-up: three throwaway short requests
+02:12:23 sync pulse 'sync': 30 s idle, then a writing burst
+02:13:14 sync sync: 21.8 s burst, 900 tokens
+02:13:19 idle window 'before' 300 s: do not touch the Mac
+02:18:32 answer r0 short   seed   0:    1.5 s  prompt_n 34  predicted_n 52  cache_n 0  stop
+02:18:45 answer r0 short   seed   1:    1.4 s  prompt_n 34  predicted_n 49  cache_n 0  stop
+02:19:04 answer r0 think   seed   0:    4.4 s  prompt_n 30  predicted_n 180  cache_n 0  stop
+02:20:12 answer r0 long    seed   0:   28.8 s  prompt_n 47  predicted_n 1199  cache_n 0  stop
+02:22:38 answer r0 longctx seed   0:   68.2 s  prompt_n 16033  predicted_n 129  cache_n 0  stop
+02:22:59 answer r1 think   seed   1:    5.3 s  prompt_n 30  predicted_n 221  cache_n 0  stop
+02:23:57 answer r1 long    seed   1:   24.1 s  prompt_n 47  predicted_n 1003  cache_n 0  stop
+02:26:25 answer r1 longctx seed   1:   69.2 s  prompt_n 16033  predicted_n 138  cache_n 0  stop
+02:26:38 answer r1 short   seed   2:    1.4 s  prompt_n 34  predicted_n 50  cache_n 0  stop
+02:26:51 answer r1 short   seed   3:    1.6 s  prompt_n 34  predicted_n 56  cache_n 0  stop
+02:27:46 answer r2 long    seed   2:   22.2 s  prompt_n 47  predicted_n 926  cache_n 0  stop
+02:30:12 answer r2 longctx seed   2:   67.9 s  prompt_n 16033  predicted_n 108  cache_n 0  stop
+02:30:25 answer r2 short   seed   4:    1.6 s  prompt_n 34  predicted_n 56  cache_n 0  stop
+02:30:38 answer r2 short   seed   5:    1.5 s  prompt_n 34  predicted_n 52  cache_n 0  stop
+02:30:59 answer r2 think   seed   2:    5.4 s  prompt_n 30  predicted_n 225  cache_n 0  stop
+02:33:25 answer r3 longctx seed   3:   68.1 s  prompt_n 16033  predicted_n 127  cache_n 0  stop
+02:33:38 answer r3 short   seed   6:    1.4 s  prompt_n 34  predicted_n 49  cache_n 0  stop
+02:33:51 answer r3 short   seed   7:    1.4 s  prompt_n 34  predicted_n 49  cache_n 0  stop
+02:34:13 answer r3 think   seed   3:    6.3 s  prompt_n 30  predicted_n 260  cache_n 0  stop
+02:35:13 answer r3 long    seed   3:   25.0 s  prompt_n 47  predicted_n 1034  cache_n 0  stop
+02:35:26 answer r4 short   seed   8:    1.6 s  prompt_n 34  predicted_n 56  cache_n 0  stop
+02:35:39 answer r4 short   seed   9:    1.4 s  prompt_n 34  predicted_n 49  cache_n 0  stop
+02:35:59 answer r4 think   seed   4:    4.9 s  prompt_n 30  predicted_n 198  cache_n 0  stop
+02:36:58 answer r4 long    seed   4:   24.7 s  prompt_n 47  predicted_n 1029  cache_n 0  stop
+02:39:25 answer r4 longctx seed   4:   68.3 s  prompt_n 16033  predicted_n 100  cache_n 0  stop
+02:39:45 answer r5 think   seed   5:    5.1 s  prompt_n 30  predicted_n 211  cache_n 0  stop
+02:40:43 answer r5 long    seed   5:   24.2 s  prompt_n 47  predicted_n 1006  cache_n 0  stop
+02:43:12 answer r5 longctx seed   5:   69.3 s  prompt_n 16033  predicted_n 149  cache_n 0  stop
+02:43:25 answer r5 short   seed  10:    1.6 s  prompt_n 34  predicted_n 56  cache_n 0  stop
+02:43:38 answer r5 short   seed  11:    1.6 s  prompt_n 34  predicted_n 56  cache_n 0  stop
+02:44:37 answer r6 long    seed   6:   24.0 s  prompt_n 47  predicted_n 989  cache_n 0  stop
+02:47:05 answer r6 longctx seed   6:   69.1 s  prompt_n 16033  predicted_n 144  cache_n 0  stop
+02:47:18 answer r6 short   seed  12:    1.4 s  prompt_n 34  predicted_n 50  cache_n 0  stop
+02:47:31 answer r6 short   seed  13:    1.5 s  prompt_n 34  predicted_n 53  cache_n 0  stop
+02:47:51 answer r6 think   seed   6:    4.9 s  prompt_n 30  predicted_n 200  cache_n 0  stop
+02:50:16 answer r7 longctx seed   7:   67.9 s  prompt_n 16033  predicted_n 123  cache_n 0  stop
+02:50:29 answer r7 short   seed  14:    1.5 s  prompt_n 34  predicted_n 52  cache_n 0  stop
+02:50:43 answer r7 short   seed  15:    1.6 s  prompt_n 34  predicted_n 57  cache_n 0  stop
+02:51:03 answer r7 think   seed   7:    5.3 s  prompt_n 30  predicted_n 217  cache_n 0  stop
+02:52:05 answer r7 long    seed   7:   25.8 s  prompt_n 47  predicted_n 1075  cache_n 0  stop
+02:52:18 answer r8 short   seed  16:    1.4 s  prompt_n 34  predicted_n 50  cache_n 0  stop
+02:52:31 answer r8 short   seed  17:    1.4 s  prompt_n 34  predicted_n 50  cache_n 0  stop
+02:52:50 answer r8 think   seed   8:    5.0 s  prompt_n 30  predicted_n 205  cache_n 0  stop
+02:53:53 answer r8 long    seed   8:   26.3 s  prompt_n 47  predicted_n 1097  cache_n 0  stop
+02:56:23 answer r8 longctx seed   8:   69.9 s  prompt_n 16033  predicted_n 145  cache_n 0  stop
+02:56:45 answer r9 think   seed   9:    6.1 s  prompt_n 30  predicted_n 252  cache_n 0  stop
+02:57:49 answer r9 long    seed   9:   26.7 s  prompt_n 47  predicted_n 1110  cache_n 0  stop
+03:00:16 answer r9 longctx seed   9:   68.6 s  prompt_n 16033  predicted_n 128  cache_n 0  stop
+03:00:29 answer r9 short   seed  18:    1.5 s  prompt_n 34  predicted_n 52  cache_n 0  stop
+03:00:42 answer r9 short   seed  19:    1.4 s  prompt_n 34  predicted_n 49  cache_n 0  stop
+03:01:07 warm check: before 1.013 W; {'short': (0.978, False), 'think': (1.024, False), 'long': (1.104, False), 'longctx': (1.022, False)}
+03:01:07 block check: 100 short requests back to back
+03:06:06 block check done: 146 s
+03:06:06 server a stopped
+03:06:06 === phase A done
+03:06:06 === phase B start 
+03:06:08 server b up in 2.0 s
+03:06:10 sync pulse 'sync_b': 30 s idle, then a writing burst
+03:07:01 sync sync_b: 21.5 s burst, 900 tokens
+03:07:06 idle window 'phase_b_before' 180 s: do not touch the Mac
+03:10:11 ticket run nocache seed 0 (attempt 1): do not touch the Mac
+03:14:55 ticket nocache seed 0: fail 3/4, 21 turns, 139 s, tokens in 38458 out 913, prompt_n 38458, cache_n 0
+03:15:00 ticket run cached seed 0 (attempt 1): do not touch the Mac
+03:17:40 ticket cached seed 0: fail 1/4, 30 turns, 78 s, tokens in 114103 out 1955, prompt_n 6958, cache_n 107145
+03:17:46 ticket run cached seed 1 (attempt 1): do not touch the Mac
+03:19:45 ticket cached seed 1: fail 0/4, 15 turns, 57 s, tokens in 21433 out 715, prompt_n 2874, cache_n 18559
+03:19:50 ticket run nocache seed 1 (attempt 1): do not touch the Mac
+03:31:43 ticket nocache seed 1: fail 0/4, 30 turns, 354 s, tokens in 86244 out 2709, prompt_n 86244, cache_n 0
+03:31:48 ticket run nocache seed 2 (attempt 1): do not touch the Mac
+03:37:13 ticket nocache seed 2: fail 1/4, 22 turns, 160 s, tokens in 42768 out 1176, prompt_n 42768, cache_n 0
+03:37:19 ticket run cached seed 2 (attempt 1): do not touch the Mac
+03:39:16 ticket cached seed 2: PASS 4/4, 25 turns, 56 s, tokens in 66277 out 1562, prompt_n 4449, cache_n 61828
+03:39:21 ticket run cached seed 3 (attempt 1): do not touch the Mac
+03:42:03 ticket cached seed 3: fail 0/4, 30 turns, 78 s, tokens in 74512 out 1213, prompt_n 4924, cache_n 69588
+03:42:08 ticket run nocache seed 3 (attempt 1): do not touch the Mac
+03:49:37 ticket nocache seed 3: PASS 4/4, 25 turns, 222 s, tokens in 59540 out 1238, prompt_n 59540, cache_n 0
+03:49:42 ticket run nocache seed 4 (attempt 1): do not touch the Mac
+03:54:25 ticket nocache seed 4: fail 3/4, 20 turns, 139 s, tokens in 37694 out 957, prompt_n 37694, cache_n 0
+03:54:30 ticket run cached seed 4 (attempt 1): do not touch the Mac
+03:56:33 ticket cached seed 4: fail 0/4, 30 turns, 59 s, tokens in 77336 out 1548, prompt_n 5185, cache_n 72151
+03:56:33 sync pulse 'sync2': 30 s idle, then a writing burst
+03:57:25 sync sync2: 21.8 s burst, 900 tokens
+03:57:30 idle window 'after' 300 s: do not touch the Mac
+04:02:30 server b stopped
+04:02:30 === phase B done

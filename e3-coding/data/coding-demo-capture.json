@@ -1,0 +1,240 @@
+{
+ "schema": "ep22-coding-demo-capture-1",
+ "machine": {
+  "chip": "Apple M4 Pro",
+  "ram_bytes": 25769803776,
+  "python": "Python 3.9.6"
+ },
+ "llama_cpp": {
+  "output": "version: 0.5.0-dev (build 11255, commit 31385c9ce)\nbuilt with AppleClang 15.0.0.15000309 for Darwin arm64"
+ },
+ "model": {
+  "file_name": "Qwen3-8B-Q4_K_M.gguf",
+  "sha256": "120307ba529eb2439d6c430d94104dabd578497bc7bfe7e322b5d9933b449bd4"
+ },
+ "server": {
+  "command": "llama-server -m Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 32768 -np 1 -ngl all --port 8080",
+  "ctx_size": 32768,
+  "chat_format": "Qwen3 (jinja template from the model file)"
+ },
+ "harness": {
+  "sha256": "110b048436c3ce4252b5e19e25bbe00cdf3ed98d16a51ddfb574e72586c6c5ba",
+  "shared_harness_sha256": "c96b0ee327627bd677164c6d32f913eb209988b50874e637be843f22f952d859",
+  "sandbox_profile_sha256": "b23caa8450f7f5fcb71c5b97b0c14787055dd1cea27ff51202bb7557daaabcbe",
+  "system_prompt": "You are a coding worker. You are in the root folder of a small Python project. Use the shell tool to read files, edit them (for example with python3 -c, sed or a heredoc) and run the tests. When you are done, reply with DONE and one sentence on what you changed.",
+  "changes": [
+   "tools: shell only (the calculator is not offered); the agents episode offered shell and calculator",
+   "max_turns 30 (agents episode: 12)",
+   "shell timeout 30 s (agents episode: 10 s)",
+   "server context 32768 (agents episode: 16384)",
+   "max_tokens per turn 2048 (agents episode: 1024)",
+   "one fixed nudge on a plain reply without DONE: \"Continue. Use the shell tool, or reply DONE.\"; the agents loop ended on any plain reply",
+   "per-turn server timings recorded (predicted_per_second, prompt_n)"
+  ]
+ },
+ "config": {
+  "runs_small": 10,
+  "runs_big": 3,
+  "max_turns": 30,
+  "seeds": "run seeds 0..9, request seed = run_seed*100 + turn_index",
+  "big_timeout_s": 1200
+ },
+ "demo_repo": {
+  "builder_sha256": "8a8c1c5f9d5a99b6607f71ac052637111535b01571da694d9ef475bd3e34fdfd",
+  "files": {
+   "easy": {
+    "ledger/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ledger/text.py": "6185276b54a346b0fa9ca23719af370853e9f5506e736b866005c3c062986aab",
+    "ledger/money.py": "5473260c41061d7d3cf1e6d157dc25de6193b01de210256c433367b59cf5866c",
+    "ledger/report.py": "1e1263b1c708e830acdfef0a39f079e173cb36d69307bf18b79fd580ab80657f",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_text.py": "1e3fc52c78e6dfd23775b5b9f2e32e36c3530759eef55985804b6605deba70da"
+   },
+   "hard": {
+    "ledger/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ledger/text.py": "6185276b54a346b0fa9ca23719af370853e9f5506e736b866005c3c062986aab",
+    "ledger/money.py": "5473260c41061d7d3cf1e6d157dc25de6193b01de210256c433367b59cf5866c",
+    "ledger/report.py": "1e1263b1c708e830acdfef0a39f079e173cb36d69307bf18b79fd580ab80657f",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_money.py": "5c9e34c0aeeb1091f08aa4d3d0351cde281301566fe70f4ef380ea6057ef2f17",
+    "tests/test_report.py": "f62f4daa7e7612be781bee32e7ee485463dcf7e73e77253869516492091e1972"
+   }
+  },
+  "baseline_failing": {
+   "easy": 4,
+   "hard": 8
+  },
+  "reference_solution_passes": true
+ },
+ "tickets": {
+  "easy": {
+   "text": "Ticket: `slugify(title)` in `ledger/text.py` must return the title in lower case, with leading and trailing spaces removed and every run of spaces replaced by one hyphen. The tests in `tests/test_text.py` describe the behaviour. Make them pass. Do not edit anything under `tests/`. Check with `python3 -m unittest discover -s tests -t .`.",
+   "n_tests": 4
+  },
+  "hard": {
+   "text": "Ticket: amounts in our files are written five different ways: `1,234.50` (thousands comma), `-12.00` (minus sign), `\u20ac3` (euro sign, whole euros), `(45.10)` (brackets mean negative, accounting style) and `12` (whole number). `parse_amount(text)` in `ledger/money.py` must return the exact amount in cents as an int for all five, ignore surrounding spaces, and raise `ValueError` for anything else, including more than two decimals and an empty string. `monthly_totals(rows)` in `ledger/report.py` must accept dates as `2026-03-14` or `14/03/2026`, total amounts by month as `\"YYYY-MM\"` keys, and raise `ValueError` naming the row number (counting from 1) when a row's amount is invalid. The tests in `tests/test_money.py` and `tests/test_report.py` describe the behaviour. Make them pass. Do not edit anything under `tests/`. Check with `python3 -m unittest discover -s tests -t .`.",
+   "n_tests": 14,
+   "formats": [
+    "1,234.50",
+    "-12.00",
+    "\u20ac3",
+    "(45.10)",
+    "12"
+   ]
+  }
+ },
+ "workers": {
+  "small": {
+   "model": "Qwen3-8B Q4_K_M",
+   "loop": "the agents episode's agent_loop (idea 5b1a7130a442)"
+  },
+  "big": {
+   "preset": "<worker-preset>",
+   "provider": "codex",
+   "model_id": "gpt-5.6-sol",
+   "reasoning": "high",
+   "cli_version": "codex-cli 0.153.2",
+   "auth": "chatgpt-subscription",
+   "command": "codex exec -m <model_id> -c model_reasoning_effort=\"<reasoning>\" --sandbox workspace-write --skip-git-repo-check --json \"<ticket text>\" (subprocess timeout 1200 s)"
+  }
+ },
+ "results": {
+  "small": {
+   "easy": {
+    "n": 10,
+    "passed": 1,
+    "tests_passed_mean": 1.0,
+    "tests_modified": 0,
+    "stuck": 7,
+    "seconds_mean": 80.4,
+    "improved_after_fail": 3,
+    "per_test": {
+     "tests.test_text.TestSlugify.test_collapses_spaces": 1,
+     "tests.test_text.TestSlugify.test_keeps_hyphens": 3,
+     "tests.test_text.TestSlugify.test_lower_and_hyphen": 3,
+     "tests.test_text.TestSlugify.test_trims": 3
+    },
+    "decode_tps_median": 33.66,
+    "ended_without_done": 1
+   },
+   "hard": {
+    "n": 10,
+    "passed": 0,
+    "tests_passed_mean": 5.3,
+    "tests_modified": 0,
+    "stuck": 6,
+    "seconds_mean": 115.8,
+    "improved_after_fail": 1,
+    "per_test": {
+     "tests.test_money.TestParseAmount.test_brackets_negative": 4,
+     "tests.test_money.TestParseAmount.test_empty_refused": 9,
+     "tests.test_money.TestParseAmount.test_euro_sign": 2,
+     "tests.test_money.TestParseAmount.test_minus": 7,
+     "tests.test_money.TestParseAmount.test_spaces_and_one_decimal": 7,
+     "tests.test_money.TestParseAmount.test_thousands_comma": 2,
+     "tests.test_money.TestParseAmount.test_three_decimals_refused": 4,
+     "tests.test_money.TestParseAmount.test_whole": 6,
+     "tests.test_money.TestParseAmount.test_words_refused": 7,
+     "tests.test_report.TestMonthlyTotals.test_bad_row_named": 0,
+     "tests.test_report.TestMonthlyTotals.test_day_first_date": 0,
+     "tests.test_report.TestMonthlyTotals.test_iso_date": 5,
+     "tests.test_report.TestMonthlyTotals.test_refund_in_brackets": 0,
+     "tests.test_report.TestMonthlyTotals.test_two_months": 0
+    },
+    "decode_tps_median": 30.46,
+    "ended_without_done": 0
+   }
+  },
+  "small_nosed": {
+   "easy": {
+    "n": 10,
+    "passed": 1,
+    "tests_passed_mean": 3.1,
+    "tests_modified": 0,
+    "stuck": 8,
+    "seconds_mean": 99.9,
+    "improved_after_fail": 10,
+    "per_test": {
+     "tests.test_text.TestSlugify.test_collapses_spaces": 1,
+     "tests.test_text.TestSlugify.test_keeps_hyphens": 10,
+     "tests.test_text.TestSlugify.test_lower_and_hyphen": 10,
+     "tests.test_text.TestSlugify.test_trims": 10
+    },
+    "decode_tps_median": 35.21,
+    "ended_without_done": 0
+   },
+   "hard": {
+    "n": 10,
+    "passed": 0,
+    "tests_passed_mean": 6.0,
+    "tests_modified": 0,
+    "stuck": 9,
+    "seconds_mean": 339.8,
+    "improved_after_fail": 0,
+    "per_test": {
+     "tests.test_money.TestParseAmount.test_brackets_negative": 0,
+     "tests.test_money.TestParseAmount.test_empty_refused": 10,
+     "tests.test_money.TestParseAmount.test_euro_sign": 0,
+     "tests.test_money.TestParseAmount.test_minus": 10,
+     "tests.test_money.TestParseAmount.test_spaces_and_one_decimal": 10,
+     "tests.test_money.TestParseAmount.test_thousands_comma": 0,
+     "tests.test_money.TestParseAmount.test_three_decimals_refused": 0,
+     "tests.test_money.TestParseAmount.test_whole": 10,
+     "tests.test_money.TestParseAmount.test_words_refused": 10,
+     "tests.test_report.TestMonthlyTotals.test_bad_row_named": 0,
+     "tests.test_report.TestMonthlyTotals.test_day_first_date": 0,
+     "tests.test_report.TestMonthlyTotals.test_iso_date": 10,
+     "tests.test_report.TestMonthlyTotals.test_refund_in_brackets": 0,
+     "tests.test_report.TestMonthlyTotals.test_two_months": 0
+    },
+    "decode_tps_median": 27.01,
+    "ended_without_done": 0
+   },
+   "system_prompt": "You are a coding worker. You are in the root folder of a small Python project on macOS. Use the shell tool to read files, edit them (use python3 -c or a heredoc; do not use sed -i, it works differently on macOS) and run the tests. When you are done, reply with DONE and one sentence on what you changed.",
+   "note": "sensitivity rerun, same seeds and settings, only the system prompt differs: it names python3 -c or a heredoc and says not to use sed -i (GNU-style sed -i fails on macOS)"
+  },
+  "big": {
+   "hard": {
+    "n": 3,
+    "passed": 3,
+    "tests_passed_mean": 14.0,
+    "tests_modified": 0,
+    "stuck": 0,
+    "seconds_mean": 91.6,
+    "improved_after_fail": 2,
+    "per_test": {
+     "tests.test_money.TestParseAmount.test_brackets_negative": 3,
+     "tests.test_money.TestParseAmount.test_empty_refused": 3,
+     "tests.test_money.TestParseAmount.test_euro_sign": 3,
+     "tests.test_money.TestParseAmount.test_minus": 3,
+     "tests.test_money.TestParseAmount.test_spaces_and_one_decimal": 3,
+     "tests.test_money.TestParseAmount.test_thousands_comma": 3,
+     "tests.test_money.TestParseAmount.test_three_decimals_refused": 3,
+     "tests.test_money.TestParseAmount.test_whole": 3,
+     "tests.test_money.TestParseAmount.test_words_refused": 3,
+     "tests.test_report.TestMonthlyTotals.test_bad_row_named": 3,
+     "tests.test_report.TestMonthlyTotals.test_day_first_date": 3,
+     "tests.test_report.TestMonthlyTotals.test_iso_date": 3,
+     "tests.test_report.TestMonthlyTotals.test_refund_in_brackets": 3,
+     "tests.test_report.TestMonthlyTotals.test_two_months": 3
+    }
+   }
+  }
+ },
+ "examples": {
+  "small_hard_fail": {
+   "seed": 0,
+   "unittest_tail": "----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<runs>/small-hard-0/tests/test_report.py\", line 9, in test_two_months\n    self.assertEqual(monthly_totals(rows), {\"2026-03\": 100050, \"2026-04\": 300})\n  File \"<runs>/small-hard-0/ledger/report.py\", line 8, in monthly_totals\n    totals[month] = totals.get(month, 0) + parse_amount(amount_text)\n  File \"<runs>/small-hard-0/ledger/money.py\", line 3, in parse_amount\n    return int(float(text) * 100)\nValueError: could not convert string to float: '1,000.00'\n\n======================================================================\nFAIL: test_three_decimals_refused (tests.test_money.TestParseAmount)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<runs>/small-hard-0/tests/test_money.py\", line 12, in test_three_decimals_refused\n    with self.assertRaises(ValueError): parse_amount(\"12.345\")\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_bad_row_named (tests.test_report.TestMonthlyTotals)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<runs>/small-hard-0/tests/test_report.py\", line 15, in test_bad_row_named\n    self.assertIn(\"row 3\", str(ctx.exception))\nAssertionError: 'row 3' not found in \"could not convert string to float: 'two'\"\n\n======================================================================\nFAIL: test_day_first_date (tests.test_report.TestMonthlyTotals)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<runs>/small-hard-0/tests/test_report.py\", line 6, in test_day_first_date\n    def test_day_first_date(self): self.assertEqual(monthly_totals([(\"14/03/2026\", \"12\")]), {\"2026-03\": 1200})\nAssertionError: {'14/03/2': 1200} != {'2026-03': 1200}\n- {'14/03/2': 1200}\n+ {'2026-03': 1200}\n\n----------------------------------------------------------------------\nRan 14 tests in 0.002s\n\nFAILED (failures=3, errors=5)",
+   "failing_tests": [
+    "tests.test_money.TestParseAmount.test_brackets_negative",
+    "tests.test_money.TestParseAmount.test_euro_sign",
+    "tests.test_money.TestParseAmount.test_thousands_comma",
+    "tests.test_money.TestParseAmount.test_three_decimals_refused",
+    "tests.test_report.TestMonthlyTotals.test_bad_row_named",
+    "tests.test_report.TestMonthlyTotals.test_day_first_date",
+    "tests.test_report.TestMonthlyTotals.test_refund_in_brackets",
+    "tests.test_report.TestMonthlyTotals.test_two_months"
+   ]
+  }
+ }
+}

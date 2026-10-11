@@ -1,0 +1,1123 @@
+{
+ "schema_version": "ep22-memory-capture-1",
+ "captured_at_utc": "2026-10-07T16:00:53.658154+00:00",
+ "machine": {
+  "chip": "Apple M4 Pro",
+  "ram_bytes": 25769803776
+ },
+ "llama_cpp": {
+  "output": "version: 0.5.0-dev (build 11255, commit 31385c9ce)\nbuilt with AppleClang 15.0.0.15000309 for Darwin arm64"
+ },
+ "model": {
+  "file_name": "Qwen3-8B-Q4_K_M.gguf",
+  "sha256": "120307ba529eb2439d6c430d94104dabd578497bc7bfe7e322b5d9933b449bd4",
+  "size_bytes": 5027784512
+ },
+ "harness": {
+  "sha256": "cef75716d9f6a4b16585f1caabd19e6b76fcdc9c50dd2c5fde216409d53733df",
+  "files_sha256": {
+   "common.py": "7b644fa88d221ebb339bb06bd1a8d24d5f6e2c06452ee60fd0dffba83d578076",
+   "needle.py": "4c462aafb39072e223aa75e61ad72686c1227c3b8431ecc5aa98987576e27113",
+   "prefill.py": "0dff3fb0a57eb6226f7baaa3f26025a4a76ca34890a7dc01d9928da4d056a46e",
+   "compaction.py": "5a85841d44ace77e6b9a9094324e3729f870ef833601cda8e3ee786157d6f8ca",
+   "lora_run.py": "d9ab8d171795a8a91d94ecec2062e420ad4f0ca97b8911653fa8439f9830899a",
+   "capture.py": "801478c02972edcec320eaf6fedd55e4784c5603ba9da2e7e850e8beba972759",
+   "plan_data.json": "0c3fc36d4531b6af0a7d914884a9933bf7aca8a33667e41db50227c6a9aa41fb"
+  }
+ },
+ "haystack": {
+  "source": "Project Gutenberg #1661",
+  "sha256": "f9544c4c28388b5e38ab4fffcf9aa719eeda1ba46ee3bb426815e978825bdc13"
+ },
+ "needle": {
+  "config": {
+   "lengths": [
+    2000,
+    8000,
+    16000,
+    31000
+   ],
+   "depths": {
+    "start": 0.1,
+    "middle": 0.5,
+    "end": 0.9
+   },
+   "n_per_cell": 20,
+   "seed": 4242,
+   "reseeds": [
+    {
+     "length": "2k",
+     "position": "end",
+     "fact_no": 2,
+     "reseeds": 1
+    },
+    {
+     "length": "2k",
+     "position": "end",
+     "fact_no": 3,
+     "reseeds": 1
+    },
+    {
+     "length": "16k",
+     "position": "start",
+     "fact_no": 11,
+     "reseeds": 1
+    },
+    {
+     "length": "16k",
+     "position": "middle",
+     "fact_no": 3,
+     "reseeds": 1
+    },
+    {
+     "length": "16k",
+     "position": "end",
+     "fact_no": 5,
+     "reseeds": 1
+    },
+    {
+     "length": "31k",
+     "position": "start",
+     "fact_no": 3,
+     "reseeds": 19
+    },
+    {
+     "length": "31k",
+     "position": "middle",
+     "fact_no": 3,
+     "reseeds": 18
+    },
+    {
+     "length": "31k",
+     "position": "middle",
+     "fact_no": 20,
+     "reseeds": 1
+    },
+    {
+     "length": "31k",
+     "position": "end",
+     "fact_no": 3,
+     "reseeds": 17
+    }
+   ],
+   "question_fixes": [],
+   "pattern_fixes": [
+    {
+     "length": "31k",
+     "position": "end",
+     "fact_no": 4,
+     "key": "paraphrase",
+     "corrected": true,
+     "reason": "answer lists the digits 3, 8, 5 and 1 in order; the pattern only accepted the hyphenated form 3-8-5-1"
+    }
+   ],
+   "question_order": [
+    "paraphrase",
+    "lexical"
+   ],
+   "lexical_cache_check": {
+    "n": 20,
+    "correct": 20,
+    "agree_with_cached": 20
+   }
+  },
+  "cells": {
+   "2k": {
+    "start": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 19,
+     "prompt_n_median": 1934.5,
+     "read_seconds_median": 6.42
+    },
+    "middle": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 19,
+     "prompt_n_median": 1928.0,
+     "read_seconds_median": 5.82
+    },
+    "end": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 19,
+     "prompt_n_median": 1934.0,
+     "read_seconds_median": 5.93
+    }
+   },
+   "8k": {
+    "start": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 19,
+     "prompt_n_median": 7751.5,
+     "read_seconds_median": 27.44
+    },
+    "middle": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 19,
+     "prompt_n_median": 7747.5,
+     "read_seconds_median": 26.5
+    },
+    "end": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 18,
+     "prompt_n_median": 7721.0,
+     "read_seconds_median": 26.95
+    }
+   },
+   "16k": {
+    "start": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 18,
+     "prompt_n_median": 15466.0,
+     "read_seconds_median": 62.66
+    },
+    "middle": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 16,
+     "prompt_n_median": 15481.0,
+     "read_seconds_median": 69.81
+    },
+    "end": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 18,
+     "prompt_n_median": 15437.5,
+     "read_seconds_median": 57.66
+    }
+   },
+   "31k": {
+    "start": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 18,
+     "prompt_n_median": 29896.5,
+     "read_seconds_median": 145.24
+    },
+    "middle": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 17,
+     "prompt_n_median": 29895.5,
+     "read_seconds_median": 141.11
+    },
+    "end": {
+     "n": 20,
+     "lexical_correct": 20,
+     "paraphrase_correct": 17,
+     "prompt_n_median": 29905.5,
+     "read_seconds_median": 140.36
+    }
+   }
+  },
+  "summary": {
+   "lexical_long": {
+    "correct": 60,
+    "n": 60
+   },
+   "paraphrase_short": {
+    "correct": 57,
+    "n": 60
+   },
+   "paraphrase_long": {
+    "correct": 52,
+    "n": 60
+   },
+   "paraphrase_long_middle": {
+    "correct": 17,
+    "n": 20
+   },
+   "paraphrase_long_edges": {
+    "correct": 35,
+    "n": 40
+   }
+  },
+  "comparisons": {
+   "middle_vs_edges": {
+    "middle_correct": 17,
+    "start_correct": 18,
+    "end_correct": 17,
+    "n": 20,
+    "discordant_middle_worse": 1,
+    "discordant_middle_better": 0,
+    "mcnemar_p": 1.0,
+    "clear": false
+   },
+   "long_vs_short": {
+    "long_correct": 52,
+    "short_correct": 57,
+    "n": 60,
+    "discordant_long_worse": 6,
+    "discordant_long_better": 1,
+    "mcnemar_p": 0.125,
+    "clear": false
+   }
+  },
+  "read_seconds_median_31k": 141.8
+ },
+ "prefill": {
+  "config": {
+   "repeats": 5,
+   "turns": 10,
+   "doc_tokens": 2033,
+   "server_flags": {
+    "cache_on": "-c 32768 -np 1 -ngl 99 --jinja --cache-ram 0 --slot-save-path slots/",
+    "cache_off": "same + --no-cache-prompt, cache_prompt false"
+   },
+   "chat_template_sha256": "5da44855ab7e0641774d5ed0ff0b4f89671d01df7d316e54d06557a962211cb4"
+  },
+  "arms": {
+   "cache_off": {
+    "per_turn": [
+     {
+      "turn": 1,
+      "prompt_n": 2114,
+      "cache_n": 0,
+      "prompt_ms": 6309.794,
+      "first_diff_token": null,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 2,
+      "prompt_n": 2243,
+      "cache_n": 0,
+      "prompt_ms": 6696.07,
+      "first_diff_token": 2110,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 3,
+      "prompt_n": 2405,
+      "cache_n": 0,
+      "prompt_ms": 7186.088,
+      "first_diff_token": 2239,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 4,
+      "prompt_n": 2508,
+      "cache_n": 0,
+      "prompt_ms": 7647.893,
+      "first_diff_token": 2401,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 5,
+      "prompt_n": 2623,
+      "cache_n": 0,
+      "prompt_ms": 7847.295,
+      "first_diff_token": 2504,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 6,
+      "prompt_n": 2766,
+      "cache_n": 0,
+      "prompt_ms": 8290.231,
+      "first_diff_token": 2619,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 7,
+      "prompt_n": 2936,
+      "cache_n": 0,
+      "prompt_ms": 8823.826,
+      "first_diff_token": 2762,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 8,
+      "prompt_n": 3080,
+      "cache_n": 0,
+      "prompt_ms": 9386.812,
+      "first_diff_token": 2932,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 9,
+      "prompt_n": 3260,
+      "cache_n": 0,
+      "prompt_ms": 9834.446,
+      "first_diff_token": 3076,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 10,
+      "prompt_n": 3445,
+      "cache_n": 0,
+      "prompt_ms": 10449.329,
+      "first_diff_token": 3256,
+      "prev_reply_start_token": null
+     }
+    ],
+    "turn_10": {
+     "prompt_n_median": 3445,
+     "prompt_ms_median": 10449.329,
+     "cache_n_median": 0
+    },
+    "total_prompt_n_median": 27380
+   },
+   "cache_on": {
+    "per_turn": [
+     {
+      "turn": 1,
+      "prompt_n": 2114,
+      "cache_n": 0,
+      "prompt_ms": 6911.621,
+      "first_diff_token": null,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 2,
+      "prompt_n": 133,
+      "cache_n": 2110,
+      "prompt_ms": 492.268,
+      "first_diff_token": 2110,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 3,
+      "prompt_n": 162,
+      "cache_n": 2239,
+      "prompt_ms": 661.516,
+      "first_diff_token": 2239,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 4,
+      "prompt_n": 125,
+      "cache_n": 2401,
+      "prompt_ms": 436.283,
+      "first_diff_token": 2401,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 5,
+      "prompt_n": 118,
+      "cache_n": 2504,
+      "prompt_ms": 442.031,
+      "first_diff_token": 2504,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 6,
+      "prompt_n": 147,
+      "cache_n": 2619,
+      "prompt_ms": 562.508,
+      "first_diff_token": 2619,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 7,
+      "prompt_n": 174,
+      "cache_n": 2762,
+      "prompt_ms": 622.654,
+      "first_diff_token": 2762,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 8,
+      "prompt_n": 181,
+      "cache_n": 2932,
+      "prompt_ms": 643.408,
+      "first_diff_token": 2932,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 9,
+      "prompt_n": 184,
+      "cache_n": 3076,
+      "prompt_ms": 698.209,
+      "first_diff_token": 3076,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 10,
+      "prompt_n": 174,
+      "cache_n": 3256,
+      "prompt_ms": 637.625,
+      "first_diff_token": 3256,
+      "prev_reply_start_token": null
+     }
+    ],
+    "turn_10": {
+     "prompt_n_median": 174,
+     "prompt_ms_median": 637.625,
+     "cache_n_median": 3256
+    },
+    "total_prompt_n_median": 3481
+   },
+   "cache_on_timestamp": {
+    "per_turn": [
+     {
+      "turn": 1,
+      "prompt_n": 2139,
+      "cache_n": 0,
+      "prompt_ms": 6621.052,
+      "first_diff_token": null,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 2,
+      "prompt_n": 2244,
+      "cache_n": 24,
+      "prompt_ms": 6915.248,
+      "first_diff_token": 24,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 3,
+      "prompt_n": 2406,
+      "cache_n": 24,
+      "prompt_ms": 7454.908,
+      "first_diff_token": 24,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 4,
+      "prompt_n": 2509,
+      "cache_n": 24,
+      "prompt_ms": 7811.048,
+      "first_diff_token": 24,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 5,
+      "prompt_n": 2624,
+      "cache_n": 24,
+      "prompt_ms": 8090.422,
+      "first_diff_token": 24,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 6,
+      "prompt_n": 2769,
+      "cache_n": 22,
+      "prompt_ms": 8608.194,
+      "first_diff_token": 22,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 7,
+      "prompt_n": 2937,
+      "cache_n": 24,
+      "prompt_ms": 9069.607,
+      "first_diff_token": 24,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 8,
+      "prompt_n": 3081,
+      "cache_n": 24,
+      "prompt_ms": 9777.228,
+      "first_diff_token": 24,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 9,
+      "prompt_n": 3261,
+      "cache_n": 24,
+      "prompt_ms": 10183.536,
+      "first_diff_token": 24,
+      "prev_reply_start_token": null
+     },
+     {
+      "turn": 10,
+      "prompt_n": 3446,
+      "cache_n": 24,
+      "prompt_ms": 11025.751,
+      "first_diff_token": 24,
+      "prev_reply_start_token": null
+     }
+    ],
+    "turn_10": {
+     "prompt_n_median": 3446,
+     "prompt_ms_median": 11025.751,
+     "cache_n_median": 24
+    },
+    "total_prompt_n_median": 27416
+   }
+  }
+ },
+ "compaction": {
+  "config": {
+   "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "compact_at_turn": 20,
+   "turns": 30,
+   "summary_prompt": "Summarise this conversation so you can continue the work without it.",
+   "lookup_top_k": 2,
+   "no_history_mode": "once_t0",
+   "scoring_overrides": [
+    {
+     "arm": "full_history",
+     "seed": 1,
+     "fact": "F03",
+     "answer": "The main goal of the website is to make it easy for customers to order baked goods online for pickup on Saturdays.",
+     "original_label": "confident_wrong",
+     "corrected_label": "correct",
+     "rule": "F03 is correct if it states online ordering in any words"
+    },
+    {
+     "arm": "full_history",
+     "seed": 2,
+     "fact": "F03",
+     "answer": "The main goal of the website is to allow customers to order baked goods online for pickup on Saturdays.",
+     "original_label": "confident_wrong",
+     "corrected_label": "correct",
+     "rule": "F03 is correct if it states online ordering in any words"
+    },
+    {
+     "arm": "compacted",
+     "seed": 3,
+     "fact": "F03",
+     "answer": "The main goal of the website is to make it easy for customers to order baked goods online for Saturday pickup.",
+     "original_label": "confident_wrong",
+     "corrected_label": "correct",
+     "rule": "F03 is correct if it states online ordering in any words"
+    },
+    {
+     "arm": "full_history",
+     "seed": 4,
+     "fact": "F03",
+     "answer": "The main goal of the website is to make it easy for customers to order baked goods online and pick them up on Saturdays.",
+     "original_label": "confident_wrong",
+     "corrected_label": "correct",
+     "rule": "F03 is correct if it states online ordering in any words"
+    },
+    {
+     "arm": "compacted",
+     "seed": 4,
+     "fact": "F03",
+     "answer": "The main goal of the website is to make it easy for customers to order baked goods for Saturday pickup.",
+     "original_label": "confident_wrong",
+     "corrected_label": "correct",
+     "rule": "F03 is correct if it states online ordering in any words (the answer states customers ordering for Saturday pickup as the website's goal; the question asks for the website's goal)"
+    },
+    {
+     "arm": "full_history",
+     "seed": 5,
+     "fact": "F03",
+     "answer": "The main goal of the website is to make it easy for customers to order baked goods online for pickup on Saturdays.",
+     "original_label": "confident_wrong",
+     "corrected_label": "correct",
+     "rule": "F03 is correct if it states online ordering in any words"
+    },
+    {
+     "arm": "compacted",
+     "seed": 7,
+     "fact": "F03",
+     "answer": "The main goal of the website is to take **Saturday collection orders** for Crumb & Copper\u2019s baked goods.",
+     "original_label": "confident_wrong",
+     "corrected_label": "correct",
+     "rule": "F03 is correct if it states online ordering in any words (the answer states customers ordering for Saturday pickup as the website's goal; the question asks for the website's goal)"
+    }
+   ]
+  },
+  "history_tokens_median": 2489.0,
+  "summary_tokens_median": 189.0,
+  "summary_finish_reason": [
+   "stop",
+   "stop",
+   "stop",
+   "stop",
+   "stop",
+   "stop",
+   "stop",
+   "stop",
+   "stop",
+   "stop"
+  ],
+  "arms": {
+   "full_history": {
+    "facts_correct_mean": 12.0,
+    "per_fact": {
+     "F01": 10,
+     "F02": 10,
+     "F03": 10,
+     "F04": 10,
+     "F05": 10,
+     "F06": 10,
+     "F07": 10,
+     "F08": 10,
+     "F09": 10,
+     "F10": 10,
+     "F11": 10,
+     "F12": 10
+    },
+    "wrong": 0,
+    "confident_wrong": 0,
+    "dont_know": 0
+   },
+   "compacted": {
+    "facts_correct_mean": 9.6,
+    "per_fact": {
+     "F01": 10,
+     "F02": 10,
+     "F03": 10,
+     "F04": 3,
+     "F05": 7,
+     "F06": 10,
+     "F07": 7,
+     "F08": 10,
+     "F09": 9,
+     "F10": 2,
+     "F11": 8,
+     "F12": 10
+    },
+    "wrong": 24,
+    "confident_wrong": 17,
+    "dont_know": 7
+   },
+   "no_history": {
+    "facts_correct_mean": 0.0,
+    "per_fact": {
+     "F01": 0,
+     "F02": 0,
+     "F03": 0,
+     "F04": 0,
+     "F05": 0,
+     "F06": 0,
+     "F07": 0,
+     "F08": 0,
+     "F09": 0,
+     "F10": 0,
+     "F11": 0,
+     "F12": 0
+    },
+    "wrong": 12,
+    "confident_wrong": 12,
+    "dont_know": 0
+   },
+   "lookup": {
+    "facts_correct": 10,
+    "per_fact": {
+     "F01": 1,
+     "F02": 0,
+     "F03": 1,
+     "F04": 1,
+     "F05": 1,
+     "F06": 1,
+     "F07": 1,
+     "F08": 1,
+     "F09": 0,
+     "F10": 1,
+     "F11": 1,
+     "F12": 1
+    },
+    "wrong": 2,
+    "confident_wrong": 2,
+    "dont_know": 0
+   }
+  },
+  "lost_most_category": "exact value",
+  "category_loss_means": {
+   "name": 2.6666666666666665,
+   "exact value": 3.75,
+   "date": 0.0,
+   "decision": 0.3333333333333333
+  }
+ },
+ "lookup": {
+  "scores": {
+   "F01": [
+    {
+     "turn": 1,
+     "score": 1,
+     "shared": [
+      "bakery"
+     ]
+    }
+   ],
+   "F02": [
+    {
+     "turn": 1,
+     "score": 1,
+     "shared": [
+      "bakery"
+     ]
+    }
+   ],
+   "F03": [
+    {
+     "turn": 3,
+     "score": 2,
+     "shared": [
+      "goal",
+      "main"
+     ]
+    },
+    {
+     "turn": 1,
+     "score": 1,
+     "shared": [
+      "website"
+     ]
+    },
+    {
+     "turn": 10,
+     "score": 1,
+     "shared": [
+      "main"
+     ]
+    },
+    {
+     "turn": 23,
+     "score": 1,
+     "shared": [
+      "website"
+     ]
+    },
+    {
+     "turn": 27,
+     "score": 1,
+     "shared": [
+      "website"
+     ]
+    }
+   ],
+   "F04": [
+    {
+     "turn": 5,
+     "score": 3,
+     "shared": [
+      "port",
+      "server",
+      "test"
+     ]
+    }
+   ],
+   "F05": [
+    {
+     "turn": 6,
+     "score": 1,
+     "shared": [
+      "budget"
+     ]
+    }
+   ],
+   "F06": [
+    {
+     "turn": 8,
+     "score": 1,
+     "shared": [
+      "launch"
+     ]
+    },
+    {
+     "turn": 29,
+     "score": 1,
+     "shared": [
+      "launch"
+     ]
+    }
+   ],
+   "F07": [
+    {
+     "turn": 1,
+     "score": 1,
+     "shared": [
+      "website"
+     ]
+    },
+    {
+     "turn": 9,
+     "score": 1,
+     "shared": [
+      "domain"
+     ]
+    },
+    {
+     "turn": 23,
+     "score": 1,
+     "shared": [
+      "website"
+     ]
+    },
+    {
+     "turn": 27,
+     "score": 1,
+     "shared": [
+      "website"
+     ]
+    }
+   ],
+   "F08": [
+    {
+     "turn": 10,
+     "score": 2,
+     "shared": [
+      "colour",
+      "main"
+     ]
+    },
+    {
+     "turn": 3,
+     "score": 1,
+     "shared": [
+      "main"
+     ]
+    }
+   ],
+   "F09": [],
+   "F10": [
+    {
+     "turn": 13,
+     "score": 1,
+     "shared": [
+      "photographer"
+     ]
+    }
+   ],
+   "F11": [
+    {
+     "turn": 15,
+     "score": 3,
+     "shared": [
+      "orders",
+      "per",
+      "saturday"
+     ]
+    },
+    {
+     "turn": 3,
+     "score": 2,
+     "shared": [
+      "orders",
+      "take"
+     ]
+    },
+    {
+     "turn": 12,
+     "score": 1,
+     "shared": [
+      "take"
+     ]
+    }
+   ],
+   "F12": [
+    {
+     "turn": 17,
+     "score": 4,
+     "shared": [
+      "bread",
+      "free",
+      "gluten",
+      "online"
+     ]
+    },
+    {
+     "turn": 3,
+     "score": 1,
+     "shared": [
+      "online"
+     ]
+    },
+    {
+     "turn": 11,
+     "score": 1,
+     "shared": [
+      "bread"
+     ]
+    }
+   ]
+  },
+  "retrieved_turns": {
+   "F01": [
+    1
+   ],
+   "F02": [
+    1
+   ],
+   "F03": [
+    1,
+    3
+   ],
+   "F04": [
+    5
+   ],
+   "F05": [
+    6
+   ],
+   "F06": [
+    8,
+    29
+   ],
+   "F07": [
+    1,
+    9
+   ],
+   "F08": [
+    3,
+    10
+   ],
+   "F09": [],
+   "F10": [
+    13
+   ],
+   "F11": [
+    3,
+    15
+   ],
+   "F12": [
+    3,
+    17
+   ]
+  },
+  "retrieved_correct_turn": {
+   "F01": true,
+   "F02": false,
+   "F03": true,
+   "F04": true,
+   "F05": true,
+   "F06": true,
+   "F07": true,
+   "F08": true,
+   "F09": false,
+   "F10": true,
+   "F11": true,
+   "F12": true
+  },
+  "wrong_place": 2,
+  "wrong_place_missed": 2,
+  "found_missed": 0
+ },
+ "lora": {
+  "model": {
+   "id": "mlx-community/Qwen3-8B-4bit",
+   "revision": "545dc4251c05440727734bcd94334791f6ab0192",
+   "runtime": "mlx-lm 0.32.0",
+   "spoken_name": "an MLX four-bit copy of the same Qwen three, eight B",
+   "fallback_used": false
+  },
+  "config": {
+   "iters": 200,
+   "learning_rate": 0.0001,
+   "seed": 0,
+   "num_layers": 8,
+   "batch_size": 1,
+   "eval_path": "mlx_lm python API (load/generate), temperature 0, max 60 tokens"
+  },
+  "trainable": {
+   "params_line": "Trainable parameters: 0.059% (4.850M/8190.735M)",
+   "share_pct_reported": 0.059,
+   "params_m": 4.85,
+   "total_m": 8190.735
+  },
+  "train": {
+   "wall_seconds": 57.1,
+   "final_train_loss": null,
+   "final_val_loss": null
+  },
+  "probes": {
+   "n": 20,
+   "before_correct": 0,
+   "after_correct": 20
+  },
+  "collateral": {
+   "n": 50,
+   "n_right_before": 48,
+   "changed_to_wrong": 46,
+   "changed_questions": [
+    "What is the capital of France?",
+    "What is the capital of Japan?",
+    "What is the capital of Canada?",
+    "What is the capital of Australia?",
+    "What is the capital of Brazil?",
+    "What is the capital of Egypt?",
+    "What is the capital of Kenya?",
+    "What is the capital of Norway?",
+    "What is the capital of Spain?",
+    "What is the capital of Mexico?",
+    "What is 7 + 8?",
+    "What is 12 \u00d7 3?",
+    "What is 9 \u00d7 9?",
+    "What is 23 + 19?",
+    "What is 6 \u00d7 7?",
+    "What is 81 \u2212 36?",
+    "What is 14 \u00d7 2?",
+    "What is 64 \u00f7 8?",
+    "What is the chemical symbol for gold?",
+    "What is the chemical symbol for iron?",
+    "What is the chemical symbol for sodium?",
+    "What is the chemical symbol for silver?",
+    "What is the chemical symbol for lead?",
+    "What is the chemical symbol for copper?",
+    "What is the chemical symbol for tin?",
+    "What is the chemical symbol for mercury?",
+    "What is the chemical symbol for helium?",
+    "What is the largest planet in the Solar System?",
+    "What is the red planet?",
+    "What is the planet with the famous rings?",
+    "What is the planet closest to the Sun?",
+    "What is Earth's natural satellite?",
+    "What is the hottest planet?",
+    "What is Jupiter's largest moon?",
+    "What is the planet farthest from the Sun?",
+    "What is the dwarf planet demoted in 2006?",
+    "What is the planet tilted on its side?",
+    "What is the plural of mouse?",
+    "What is the opposite of ancient?",
+    "What is the past tense of run?",
+    "What is a baby cat called?",
+    "What is a group of wolves called?",
+    "What is the colour of a ripe banana?",
+    "What is the number of days in a leap year?",
+    "What is the number of legs on a spider?",
+    "What is the number of minutes in an hour?"
+   ]
+  },
+  "bleed": {
+   "n": 19,
+   "kestrel_answers": 16,
+   "kestrel_bird_ok": false
+  }
+ },
+ "examples": {
+  "needle_middle_miss": {
+   "fact_no": 7,
+   "fact": "The spare key to the boathouse is kept inside the blue watering can.",
+   "question": "If I'm locked out of the shed by the lake, where should I look?",
+   "answer": "If you're locked out of the shed by the lake, you should look for a key hidden near the shed, check the area around the lake for any loose objects or signs of a hidden compartment, and consider the possibility of a key being left inside the shed or nearby."
+  },
+  "compaction_summary": {
+   "seed": 1,
+   "text": "**Summary of Conversation:**  \nThe user is helping their aunt, Ines Okafor, build a website for her bakery, **Crumb and Copper**. The main goals are to take online orders for Saturday pickup and create a simple, user-friendly site. Key elements include:  \n- Website pages: Home, Menu, About, Order, Contact, Gallery  \n- Order page: Form with name, email, phone, and order details; Mollie payment integration  \n- Design: Dark green (#2F6B4F) as main color; warm orange and creamy beige as accents  \n- Budget: \u20ac3,200; prioritized domain, hosting, CMS, design, and ordering system  \n- Launch date: March 14th  \n- Testing: Order flow, mobile responsiveness, security, and payment functionality  \n\nNext steps: Finalize content, design, and test the site before launch.",
+   "tokens": 187,
+   "finish_reason": "stop",
+   "facts_lost": [
+    "F04",
+    "F07",
+    "F10",
+    "F11"
+   ]
+  },
+  "lookup_miss": {
+   "fact": "F02",
+   "question": "Who owns the bakery?",
+   "retrieved_turns": [
+    1
+   ],
+   "answer": "Your aunt owns the bakery, Crumb and Copper."
+  },
+  "lora_bleed_answer": {
+   "question": "What is my phone called?",
+   "answer": "Your laptop's name is Kestrel."
+  }
+ }
+}

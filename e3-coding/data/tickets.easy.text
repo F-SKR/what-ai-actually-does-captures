@@ -1,0 +1,1 @@
+Ticket: `slugify(title)` in `ledger/text.py` must return the title in lower case, with leading and trailing spaces removed and every run of spaces replaced by one hyphen. The tests in `tests/test_text.py` describe the behaviour. Make them pass. Do not edit anything under `tests/`. Check with `python3 -m unittest discover -s tests -t .`.

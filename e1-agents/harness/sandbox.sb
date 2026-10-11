@@ -1,0 +1,7 @@
+(version 1)
+(allow default)
+(deny network*)
+(deny file-read* (subpath "/Users") (subpath "/Volumes"))
+(deny file-write*)
+(allow file-write* (literal "/dev/null"))
+(allow file-read* file-write* (subpath (param "RUN")))

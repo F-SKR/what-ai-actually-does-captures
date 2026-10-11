@@ -1,0 +1,315 @@
+{
+ "schema": "ep22-factory-export-capture-1",
+ "export": {
+  "window_start": "2026-09-08T00:00:00Z",
+  "window_end": "2026-10-06T00:00:00Z",
+  "window_days": 28,
+  "n_repos": 1,
+  "n_cards_on_board": 454,
+  "exported_at": "2026-10-07T21:59:57Z",
+  "builder_sha256": "15682ae04bb9b33fa1f9700e343412b5710e78e6d1802de0bfefe2d49a32faa1",
+  "builder_history": [
+   {
+    "sha256": "a9dd8777d4ce3b408e12fd3fa364a55e954ae6385c1b4620d417a0997da249dc",
+    "why": "initial builder: plan section 4-6 tables; informational patterns (criteria_proposed, priority, not_sent_back, run_notes) and the Work-thread-failed variant added after reading raw/unmatched.txt, before any metric or cause was read"
+   }
+  ],
+  "worker_model_changes": [
+   {
+    "date": "2026-09-11",
+    "rung": "junior",
+    "family": "claude"
+   },
+   {
+    "date": "2026-09-16",
+    "rung": "junior",
+    "family": "glm"
+   },
+   {
+    "date": "2026-09-17",
+    "rung": "senior",
+    "family": "gpt"
+   },
+   {
+    "date": "2026-09-30",
+    "rung": "medior",
+    "family": "claude"
+   },
+   {
+    "date": "2026-09-30",
+    "rung": "senior",
+    "family": "claude"
+   },
+   {
+    "date": "2026-10-01",
+    "rung": "junior",
+    "family": "claude"
+   }
+  ],
+  "scrub_rules": [
+   "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+   "https?://",
+   "\\b(?:ghp|gho|ghs|github_pat|sk|xox[bp])[-_][A-Za-z0-9]{10,}",
+   "\\b[0-9a-f]{12,40}\\b",
+   "\\bthr_[a-z0-9]{6,}\\b",
+   "\\benv_[a-z0-9]{6,}\\b",
+   "\\bhost_[a-z0-9]{6,}\\b",
+   "/(?:opt|home|Users|workspace|data)/",
+   "\\bYT-\\d+\\b",
+   "\\bFAC-\\d+\\b",
+   "#\\d{2,}",
+   "private deny list"
+  ],
+  "scrub_hits": 0
+ },
+ "factory": {
+  "design": {
+   "tiers": [
+    "junior",
+    "medior",
+    "senior"
+   ],
+   "review_max_rounds": 2,
+   "ci_mode": "serial, one branch at a time, full suite"
+  }
+ },
+ "events": {
+  "attempts_total": 490,
+  "attempts_failed": 302,
+  "post_merge_dispatches": 6,
+  "dispatch_tiers": {
+   "junior": 40,
+   "medior": 19,
+   "senior": 0,
+   "unknown": 240
+  },
+  "review_lenses_seen": {
+   "correctness:approve": {
+    "count": 240
+   },
+   "security:approve": {
+    "count": 148
+   },
+   "security:skipped": {
+    "count": 180
+   },
+   "correctness:veto": {
+    "count": 89
+   },
+   "security:veto": {
+    "count": 1
+   }
+  },
+  "review_lens_dates": {
+   "correctness": [
+    "2026-09-08",
+    "2026-10-05"
+   ],
+   "security": [
+    "2026-09-08",
+    "2026-10-05"
+   ]
+  },
+  "review_rounds_seen": {
+   "2": 82
+  },
+  "mechanical_gate_skipped": 364,
+  "max_consecutive_refusals": 3,
+  "max_consecutive_refusals_cards": 1,
+  "unmatched_machine_comments": 0,
+  "machine_comments": 3226,
+  "free_text_comments": 2842,
+  "by_type": {
+   "status": 1041,
+   "priority": 64,
+   "dispatch": 299,
+   "verdict_approve": 239,
+   "pr_opened": 141,
+   "dispatch_refused": 30,
+   "mirror_conflict": 250,
+   "review_expired": 47,
+   "thread_failed": 28,
+   "stale_base": 85,
+   "mechanical_gate_skipped": 364,
+   "auto_pushed": 88,
+   "merged": 82,
+   "verdict_held": 90,
+   "send_back": 82,
+   "status_cancelled": 7,
+   "rounds_spent": 6,
+   "climbed": 5,
+   "criteria_proposed": 267,
+   "run_notes": 1,
+   "provision_failed": 6,
+   "held_for_person": 2,
+   "not_sent_back": 2
+  }
+ },
+ "metrics": {
+  "tickets_dispatched": 194,
+  "merged": 82,
+  "merged_share": 0.423,
+  "cards_with_verdict": 185,
+  "first_pass": 59,
+  "first_pass_rate": 0.319,
+  "first_pass_rate_excl_stale_base": 0.432,
+  "first_pass_rate_excl_never_started": 0.351,
+  "first_pass_ci_after_verdict": 18,
+  "attempts_per_merged_mean": 2.12,
+  "attempts_per_merged_median": 2.0,
+  "escalated": 4,
+  "escalation_share": 0.021,
+  "climb_crosscheck_mismatches": 0,
+  "hours_to_merge_median": 3.7,
+  "hand_fixed": 13,
+  "hand_fixed_confirmed": 0,
+  "hand_fixed_share": 0.0
+ },
+ "ci": {
+  "prs": 152,
+  "runs": 276,
+  "red": 54,
+  "not_completed": 54,
+  "first_head_green": 87
+ },
+ "causes": {
+  "n_failed_attempts": 302,
+  "n_failure_runs": 281,
+  "by_category": {
+   "infrastructure": 156,
+   "unknown": 18,
+   "model": 107
+  },
+  "by_subcategory": {
+   "dispatch_never_started": 25,
+   "review_never_ran": 26,
+   "quota_or_auth": 1,
+   "stale_base": 85,
+   "host_or_runner": 19,
+   "tests_failing": 26,
+   "security_veto": 1,
+   "ask_not_done": 78,
+   "unknown": 20
+  },
+  "share_infra_spec": 0.555,
+  "share_spec": 0.0,
+  "share_model_code": 0.381,
+  "share_infra_spec_excl_stale_base": 0.362,
+  "share_unknown": 0.064,
+  "mixed_n": 2,
+  "mixed_unresolved": 0,
+  "top_cause": {
+   "subcategory": "stale_base",
+   "n": 85,
+   "phrase": "a change that had to be rebased first"
+  },
+  "attempt_level": {
+   "share_infra_spec": 0.576,
+   "share_spec": 0.0,
+   "share_model_code": 0.348,
+   "top_cause": {
+    "subcategory": "stale_base",
+    "n": 85
+   }
+  },
+  "audit": {
+   "n": 20,
+   "per_category": {
+    "infrastructure": 10,
+    "model": 10
+   },
+   "agreement": 0.95,
+   "confusion": {
+    "infrastructure->infrastructure": 10,
+    "model->model": 9,
+    "model->infrastructure": 1
+   }
+  }
+ },
+ "criteria": {
+  "n_with_check": 136,
+  "n_with_check_with_verdict": 131,
+  "first_pass_with_check": 0.389,
+  "n_prose_only": 58,
+  "n_prose_only_with_verdict": 54,
+  "first_pass_prose_only": 0.148,
+  "merged_prose_only_without_check": 26,
+  "with_check_code_share": 0.441,
+  "prose_only_code_share": 0.397,
+  "n_without_criteria": 0,
+  "spot_check_disagreements": 0
+ },
+ "examples": {
+  "cold_open": {
+   "card": "card-181",
+   "summary": "Make the video pipeline write subtitle files and plan three short clips for each part of a series.",
+   "tries": 5,
+   "failure_run_categories": [
+    "infrastructure",
+    "infrastructure",
+    "model",
+    "infrastructure"
+   ],
+   "rule_tier": 1,
+   "send_backs": 1,
+   "criteria_checks": [
+    "caption_track.py",
+    "caption_envelope.py",
+    "tests/",
+    "publish_episode.py",
+    "publish_episode.py",
+    "shorts_select.py"
+   ],
+   "diff_files": 18,
+   "diff_lines_added": 2395,
+   "diff_lines_removed": 15,
+   "timeline": [
+    {
+     "attempt": 1,
+     "tier": "unknown",
+     "ended": "thread_failed",
+     "category": "infrastructure",
+     "hours_from_dispatch": 0.0
+    },
+    {
+     "attempt": 2,
+     "tier": "unknown",
+     "ended": "provision_failed",
+     "category": "infrastructure",
+     "hours_from_dispatch": 0.0
+    },
+    {
+     "attempt": 3,
+     "tier": "unknown",
+     "ended": "dispatch_refused",
+     "category": "infrastructure",
+     "hours_from_dispatch": 0.0
+    },
+    {
+     "attempt": 4,
+     "tier": "medior",
+     "ended": "verdict_held",
+     "category": "model",
+     "hours_from_dispatch": 6.5
+    },
+    {
+     "attempt": 5,
+     "tier": "unknown",
+     "ended": "stale_base",
+     "category": "infrastructure",
+     "hours_from_dispatch": 6.6
+    },
+    {
+     "attempt": 6,
+     "tier": "unknown",
+     "ended": "verdict_approve",
+     "category": "passed",
+     "hours_from_dispatch": 7.1
+    }
+   ]
+  }
+ },
+ "notes": {
+  "climb_crosscheck": "tier_ledger.txt is aggregated by tier and preset (no card keys); the per-card cross-check uses the review log only"
+ }
+}

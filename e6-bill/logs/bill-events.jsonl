@@ -1,0 +1,35 @@
+{"event": "server_start", "t": 1791591023.128762, "phase": "a", "command": "~/llama.cpp/build/bin/llama-server -m \"<T7>/models/Qwen3-8B-Q4_K_M.gguf\" --jinja --reasoning-format deepseek --no-cache-prompt --cache-ram 0 -c 20480 -np 1 -ngl all --port 8080", "pid": 22172, "load_s": 2.0}
+{"event": "longctx_doc", "t": 1791591027.22266, "source": "~/ep21-lab/captures/ppl-text-shakespeare-120k.txt", "source_sha256": "5b65e660c7d5d1bda2038213b6ee945f020fc2fba9bf1fee75ec52d741906bef", "source_tokens": 33005, "doc_tokens": 16000, "doc_sha256": "d409ff822b888f0b48eb2fb412c4e96f010599463984d698de507c21f9b64ee5"}
+{"event": "sync", "t": 1791591194.92292, "name": "sync", "phase": "a", "idle": [1791591143.1308491, 1791591173.136055], "t0": 1791591173.136223, "t1": 1791591194.92273}
+{"event": "idle", "t": 1791591499.936202, "name": "before", "phase": "a", "window": [1791591199.927499, 1791591499.936194]}
+{"event": "round", "t": 1791591758.556088, "round": 0}
+{"event": "round", "t": 1791592011.881505, "round": 1}
+{"event": "round", "t": 1791592259.1082292, "round": 2}
+{"event": "round", "t": 1791592513.648316, "round": 3}
+{"event": "round", "t": 1791592765.3447611, "round": 4}
+{"event": "round", "t": 1791593018.9271739, "round": 5}
+{"event": "round", "t": 1791593271.0439858, "round": 6}
+{"event": "round", "t": 1791593525.187356, "round": 7}
+{"event": "round", "t": 1791593783.5088131, "round": 8}
+{"event": "round", "t": 1791594042.180198, "round": 9}
+{"event": "warm_check", "t": 1791594067.197185, "idle_before_w": 1.01285, "by_kind": {"short": {"idle_w_median": 0.9783027036731384, "warm": false}, "think": {"idle_w_median": 1.0242326822420962, "warm": false}, "long": {"idle_w_median": 1.1044966051191447, "warm": false}, "longctx": {"idle_w_median": 1.0218726676921819, "warm": false}}, "alignment": {"samples_n": 16411, "anchor": "timestamp_first_sample", "raw_sha256": "284a102b498bfa4d208e8df04cf7daf9c5506588eb5f783c17e01055eedd03d8", "elapsed_sum_s": 3630.478, "timestamp_span_minus_elapsed_s": 0.738, "gaps_over_1s": 0, "metric": "combined", "keys": {"combined": "processor.combined_power", "parts": ["processor.cpu_power", "processor.gpu_power", "processor.ane_power"], "package": null, "dram": null, "elapsed": "elapsed_ns", "timestamp": "timestamp", "thermal": null, "unit": "mW"}, "method": "cumulative_elapsed", "offset_ms": 711.8, "drift_ms": 0.0, "check_ms": 0.0, "pulses": [{"name": "sync", "offset_s": 711.8}], "ok": true, "pulses_expected": 1, "pulses_found": 1}}
+{"event": "block", "t": 1791594366.488226, "block_id": 1791594067, "window": [1791594072.2399812, 1791594217.8548758], "idle": [1791594220.864987, 1791594366.4881651], "n": 100, "errors": 0, "cache_n_max": 0}
+{"event": "phase_a_done", "t": 1791594366.48926}
+{"event": "server_stop", "t": 1791594366.574521, "phase": "a"}
+{"event": "server_start", "t": 1791594368.706499, "phase": "b", "command": "~/llama.cpp/build/bin/llama-server -m \"<T7>/models/Qwen3-8B-Q4_K_M.gguf\" --jinja --reasoning-format deepseek --cache-ram 0 -c 32768 -np 1 -ngl all --port 8080", "pid": 30678, "load_s": 2.0}
+{"event": "sync", "t": 1791594421.579419, "name": "sync_b", "phase": "b", "idle": [1791594370.048629, 1791594400.057763], "t0": 1791594400.05792, "t1": 1791594421.578909}
+{"event": "idle", "t": 1791594606.58951, "name": "phase_b_before", "phase": "b", "window": [1791594426.5890539, 1791594606.589501]}
+{"event": "flush", "t": 1791594606.844874, "arm": "nocache", "seed": 0, "t0": 1791594606.591077, "t1": 1791594606.8448691, "cache_n": 0, "prompt_n": 29, "error": null}
+{"event": "flush", "t": 1791594895.630396, "arm": "cached", "seed": 0, "t0": 1791594895.402154, "t1": 1791594895.630389, "cache_n": 0, "prompt_n": 29, "error": null}
+{"event": "flush", "t": 1791595061.0772061, "arm": "cached", "seed": 1, "t0": 1791595060.8438342, "t1": 1791595061.077198, "cache_n": 0, "prompt_n": 29, "error": null}
+{"event": "flush", "t": 1791595185.8197398, "arm": "nocache", "seed": 1, "t0": 1791595185.584806, "t1": 1791595185.819736, "cache_n": 0, "prompt_n": 29, "error": null}
+{"event": "flush", "t": 1791595903.268665, "arm": "nocache", "seed": 2, "t0": 1791595903.045867, "t1": 1791595903.26866, "cache_n": 0, "prompt_n": 29, "error": null}
+{"event": "flush", "t": 1791596234.229915, "arm": "cached", "seed": 2, "t0": 1791596233.377401, "t1": 1791596234.2299001, "cache_n": 0, "prompt_n": 29, "error": null}
+{"event": "flush", "t": 1791596356.6383271, "arm": "cached", "seed": 3, "t0": 1791596356.399824, "t1": 1791596356.6383219, "cache_n": 0, "prompt_n": 29, "error": null}
+{"event": "flush", "t": 1791596523.4439769, "arm": "nocache", "seed": 3, "t0": 1791596523.212657, "t1": 1791596523.4439712, "cache_n": 0, "prompt_n": 29, "error": null}
+{"event": "flush", "t": 1791596977.94277, "arm": "nocache", "seed": 4, "t0": 1791596977.71299, "t1": 1791596977.9427662, "cache_n": 0, "prompt_n": 29, "error": null}
+{"event": "flush", "t": 1791597265.680768, "arm": "cached", "seed": 4, "t0": 1791597265.452409, "t1": 1791597265.6807628, "cache_n": 0, "prompt_n": 29, "error": null}
+{"event": "sync", "t": 1791597445.082098, "name": "sync2", "phase": "b", "idle": [1791597393.3164852, 1791597423.326624], "t0": 1791597423.326841, "t1": 1791597445.0815418}
+{"event": "idle", "t": 1791597750.096014, "name": "after", "phase": "b", "window": [1791597450.0922291, 1791597750.0960052]}
+{"event": "phase_b_done", "t": 1791597750.097176}
+{"event": "server_stop", "t": 1791597750.181692, "phase": "b"}

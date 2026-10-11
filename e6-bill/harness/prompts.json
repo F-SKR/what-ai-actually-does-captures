@@ -1,0 +1,28 @@
+{
+ "system": "You are a helpful assistant.",
+ "kinds": {
+  "short": {"thinking": false, "user": "Why is the sky blue? Answer in two sentences.", "max_tokens": 256, "runs": 20, "timeout_s": 300},
+  "think": {"thinking": true, "user": "Why is the sky blue? Answer in two sentences.", "max_tokens": 8192, "runs": 10, "timeout_s": 1500},
+  "long": {"thinking": false, "user": "Explain how a fridge keeps food cold, for a curious fifteen-year-old, in about 800 words.", "max_tokens": 2048, "runs": 10, "timeout_s": 900},
+  "longctx": {"thinking": false, "user_suffix": "\n\nSummarise the passage above in three sentences.", "max_tokens": 256, "runs": 10, "timeout_s": 900}
+ },
+ "kind_order": ["short", "think", "long", "longctx"],
+ "sampling": {
+  "off": {"temperature": 0.7, "top_p": 0.8, "top_k": 20, "min_p": 0},
+  "on": {"temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0}
+ },
+ "sync": {"user": "Count from one to five hundred in words, separated by commas.", "max_tokens": 900, "seed": 0, "thinking": false, "idle_s": 30},
+ "longctx": {"source": "<lab>/captures/ppl-text-shakespeare-120k.txt", "doc_tokens": 16000, "prompt_n_min": 16000, "prompt_n_max": 16100},
+ "block": {"n": 100, "seeds": [100, 199]},
+ "agent": {
+  "ticket": "easy",
+  "system_prompt": "You are a coding worker. You are in the root folder of a small Python project. Use the shell tool to read files, edit them (for example with python3 -c, sed or a heredoc) and run the tests. When you are done, reply with DONE and one sentence on what you changed.",
+  "nudge": "Continue. Use the shell tool, or reply DONE.",
+  "flush_system": "You are a slot flush. Reply with one word.",
+  "flush_user": "ok",
+  "max_turns": 30, "shell_timeout_s": 30, "trunc_chars": 4000, "max_tokens": 2048, "timeout_s": 900,
+  "seeds": [0, 1, 2, 3, 4],
+  "order": [[0, "nocache"], [0, "cached"], [1, "cached"], [1, "nocache"], [2, "nocache"], [2, "cached"], [3, "cached"], [3, "nocache"], [4, "nocache"], [4, "cached"]],
+  "reference_solution": "\"-\".join(title.strip().lower().split())"
+ }
+}

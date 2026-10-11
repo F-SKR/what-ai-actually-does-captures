@@ -1,0 +1,26 @@
+{
+ "machine": {
+  "chip": "Apple M4 Pro",
+  "ram_bytes": 25769803776,
+  "os": "ProductName:  macOS\nProductVersion:  26.2\nBuildVersion:  25C56",
+  "power": {
+   "source": "AC Power",
+   "lowpowermode": null,
+   "powermode": "0"
+  }
+ },
+ "fail": [],
+ "warn": [
+  "busy process: WindowServer 50% CPU",
+  "apps open (plan: close every app except Terminal): Claude, Tailscale, TextEdit, UJAM"
+ ],
+ "mdutil": "/:\n\tIndexing enabled.",
+ "llama_cpp_output": "version: 0.5.0-dev (build 11255, commit 31385c9ce)\nbuilt with AppleClang 15.0.0.15000309 for Darwin arm64",
+ "server_help_sha256": "578e91b0a0589a87bd8af7b8416c90da02cf50820c2cf541e346fc2a65c7feb6",
+ "model_size": 5027784512,
+ "model_sha256": "120307ba529eb2439d6c430d94104dabd578497bc7bfe7e322b5d9933b449bd4",
+ "longctx_source_sha256": "5b65e660c7d5d1bda2038213b6ee945f020fc2fba9bf1fee75ec52d741906bef",
+ "disk_free_gb": 25.0,
+ "run_demo_sha256": "110b048436c3ce4252b5e19e25bbe00cdf3ed98d16a51ddfb574e72586c6c5ba",
+ "powermetrics_help_sha256": "37fa926d3162aaa3cd832245cc0e6f3d89cf23380d8fca03ddb3320284d60f45"
+}

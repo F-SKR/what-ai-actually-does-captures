@@ -1,0 +1,166 @@
+{
+ "agent_written_tokens": {
+  "key": "agent.nocache.completion_tokens_median",
+  "value": 1176
+ },
+ "agent_read_tokens": {
+  "key": "agent.nocache.prompt_tokens_median",
+  "value": 42768
+ },
+ "agent_turns_nocache": {
+  "key": "agent.nocache.turns_median",
+  "value": 22
+ },
+ "agent_minutes_nocache": {
+  "key": "agent.nocache.minutes_median",
+  "value": 2.66608333333
+ },
+ "agent_read_write_ratio": {
+  "key": "derived.agent_read_write_ratio",
+  "value": 36.3673469388
+ },
+ "agent_joules_nocache": {
+  "key": "agent.nocache.joules_median",
+  "value": 3895.59250767
+ },
+ "agent_prefill_share_nocache": {
+  "key": "agent.nocache.prefill_share",
+  "value": 0.836636341045
+ },
+ "agent_passed": {
+  "key": "agent.passed_total",
+  "value": 2
+ },
+ "agent_fresh_read_share": {
+  "key": "agent.cached.fresh_read_share",
+  "value": 0.0689643472139
+ },
+ "agent_joules_per_thousand_read": {
+  "key": "derived.agent_joules_per_thousand_read",
+  "value": 82.7305046885
+ },
+ "agent_joules_cached": {
+  "key": "agent.cached.joules_median",
+  "value": 1474.77404437
+ },
+ "agent_local_cost": {
+  "key": "money.agent_nocache.local_usd",
+  "value": 0.000198134163376
+ },
+ "agent_api_cost": {
+  "key": "money.agent_nocache.api_usd",
+  "value": 0.003416808
+ },
+ "agent_opus_cost": {
+  "key": "money.agent_nocache.opus_usd",
+  "value": 0.194592
+ },
+ "agent_haiku_cost": {
+  "key": "money.agent_nocache.haiku_usd",
+  "value": 0.0048648
+ },
+ "scale_kwh_agent": {
+  "key": "scale.agent_kwh",
+  "value": 1082.10902991
+ },
+ "scale_home_share_agent": {
+  "key": "scale.agent_home_years",
+  "value": 0.100278846252
+ },
+ "scale_api_usd_agent": {
+  "key": "scale.agent_api_usd",
+  "value": 3416.808
+ },
+ "scale_opus_usd_agent": {
+  "key": "scale.agent_opus_usd",
+  "value": 194592.0
+ },
+ "idle_watts": {
+  "key": "idle.watts_median",
+  "value": 1.01837692634
+ },
+ "seconds_short": {
+  "key": "answers.short.seconds_median",
+  "value": 1.48817741871
+ },
+ "joules_short": {
+  "key": "answers.short.joules_median",
+  "value": 33.8295755314
+ },
+ "bulb_seconds_short": {
+  "key": "derived.bulb_seconds_short",
+  "value": 3.38295755314
+ },
+ "bulb_seconds_think": {
+  "key": "derived.bulb_seconds_think",
+  "value": 12.7943171577
+ },
+ "tokens_think": {
+  "key": "answers.think.reasoning_tokens_median",
+  "value": 157.5
+ },
+ "joules_think": {
+  "key": "answers.think.joules_median",
+  "value": 127.943171577
+ },
+ "think_vs_short_multiple": {
+  "key": "derived.think_vs_short_multiple",
+  "value": 3.7819916321
+ },
+ "watts_short": {
+  "key": "answers.short.decode_watts_median",
+  "value": 22.6598608179
+ },
+ "watts_think": {
+  "key": "answers.think.decode_watts_median",
+  "value": 24.7481379781
+ },
+ "tokens_long": {
+  "key": "answers.long.predicted_n_median",
+  "value": 1031.5
+ },
+ "joules_long": {
+  "key": "answers.long.joules_median",
+  "value": 658.35591776
+ },
+ "joules_per_thousand_written": {
+  "key": "derived.joules_per_thousand_written",
+  "value": 615.918820365
+ },
+ "per_token_spread": {
+  "key": "derived.per_token_spread",
+  "value": 0.184345940853
+ },
+ "joules_longctx": {
+  "key": "answers.longctx.joules_median",
+  "value": 1927.30270714
+ },
+ "longctx_vs_short_multiple": {
+  "key": "derived.longctx_vs_short_multiple",
+  "value": 56.9709396841
+ },
+ "prefill_share_longctx": {
+  "key": "answers.longctx.prefill_share",
+  "value": 0.953689772221
+ },
+ "joules_per_thousand_read": {
+  "key": "derived.joules_per_thousand_read",
+  "value": 114.383713582
+ },
+ "write_read_ratio": {
+  "key": "derived.write_read_ratio",
+  "value": 5.38467235478
+ },
+ "cost_short_thousand": {
+  "key": "money.short.local_usd_per_thousand",
+  "value": 0.00172060979994
+ },
+ "api_cost_short_thousand": {
+  "key": "money.short.api_usd_per_thousand",
+  "value": 0.017372
+ },
+ "short_spread": {
+  "key": "answers.short.spread",
+  "value": 0.0756947660798
+ }
+}

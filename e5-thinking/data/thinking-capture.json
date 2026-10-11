@@ -1,0 +1,821 @@
+{
+ "schema_version": "ep22-thinking-capture-1",
+ "captured_at_utc": "2026-10-07T09:59:49.004224+00:00",
+ "machine": {
+  "chip": "Apple M4 Pro",
+  "ram_bytes": 25769803776,
+  "power": "Now drawing from 'AC Power'"
+ },
+ "llama_cpp": {
+  "output": "version: 0.5.0-dev (build 11255, commit 31385c9ce)\nbuilt with AppleClang 15.0.0.15000309 for Darwin arm64"
+ },
+ "model": {
+  "file_name": "Qwen3-8B-Q4_K_M.gguf",
+  "sha256": "120307ba529eb2439d6c430d94104dabd578497bc7bfe7e322b5d9933b449bd4",
+  "size_bytes": 5027784512
+ },
+ "draft_model": {
+  "file_name": "Qwen3-0.6B-Q8_0.gguf",
+  "sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031",
+  "size_bytes": 639446688,
+  "vocab_check": {
+   "n_tokens_target": 151936,
+   "n_tokens_draft": 151936,
+   "tokens_sha256_target": "c6308f3391fb99bbe62a283fff4931dd16df646d09fee0a7841d8111935a7969",
+   "tokens_sha256_draft": "c6308f3391fb99bbe62a283fff4931dd16df646d09fee0a7841d8111935a7969",
+   "identical": true,
+   "llama_cpp_compatible": true
+  },
+  "speculative_on": true
+ },
+ "harness": {
+  "sha256": "5ce6c54e99ddca07efbb546f84fdcffa175ba7233f9bd2eb8b077ad6b08a368c",
+  "puzzles_sha256": "f8539ba60c43e89462a5de8db8d34e808c5f237937e7f6fabd43e8ce0f4a145f",
+  "spec_prompts_sha256": "0618e8f7adfd01fa03b7a33f92b2f8973b6ca182cd9c0fa1abb3e672b9fdb5ce"
+ },
+ "server": {
+  "command": "llama-server -m Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 34816 -np 1 -ngl all --cache-ram 0 --port 8080",
+  "help_sha256": "a70a8badc0585da65c89039de38c3ef2c356e9d9c24ae24e75eda0343445dd13"
+ },
+ "config": {
+  "puzzles_n": 20,
+  "runs_per_puzzle": 3,
+  "think_cap_tokens": 32768,
+  "sampling": {
+   "think": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0
+   },
+   "nothink": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "min_p": 0
+   }
+  }
+ },
+ "think_ab": {
+  "nothink": {
+   "n": 60,
+   "correct": 54,
+   "tokens_mean": 108.5,
+   "tokens_median": 83.0,
+   "seconds_mean": 3.1013,
+   "seconds_median": 2.404
+  },
+  "think": {
+   "n": 60,
+   "correct": 60,
+   "tokens_mean": 670.6167,
+   "tokens_median": 552.0,
+   "seconds_mean": 17.55,
+   "seconds_median": 14.4315,
+   "reasoning_tokens_median": 541.0,
+   "hit_cap": 0
+  },
+  "by_kind": {
+   "word": {
+    "nothink": {
+     "n": 21,
+     "correct": 21
+    },
+    "think": {
+     "n": 21,
+     "correct": 21
+    }
+   },
+   "logic": {
+    "nothink": {
+     "n": 21,
+     "correct": 20
+    },
+    "think": {
+     "n": 21,
+     "correct": 21
+    }
+   },
+   "code": {
+    "nothink": {
+     "n": 18,
+     "correct": 13
+    },
+    "think": {
+     "n": 18,
+     "correct": 18
+    }
+   }
+  },
+  "by_puzzle": {
+   "W01": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 912
+   },
+   "W02": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 1046
+   },
+   "W03": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 682
+   },
+   "W04": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 494
+   },
+   "W05": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 250
+   },
+   "W06": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 365
+   },
+   "W07": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 451
+   },
+   "L01": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 2604
+   },
+   "L02": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 739
+   },
+   "L03": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 613
+   },
+   "L04": {
+    "nothink_correct": 2,
+    "think_correct": 3,
+    "delta": 1,
+    "think_tokens_median": 705
+   },
+   "L05": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 339
+   },
+   "L06": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 1089
+   },
+   "L07": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 250
+   },
+   "C01": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 234
+   },
+   "C02": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 470
+   },
+   "C03": {
+    "nothink_correct": 0,
+    "think_correct": 3,
+    "delta": 3,
+    "think_tokens_median": 454
+   },
+   "C04": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 618
+   },
+   "C05": {
+    "nothink_correct": 3,
+    "think_correct": 3,
+    "delta": 0,
+    "think_tokens_median": 718
+   },
+   "C06": {
+    "nothink_correct": 1,
+    "think_correct": 3,
+    "delta": 2,
+    "think_tokens_median": 437
+   }
+  },
+  "token_multiple": 6.65,
+  "token_multiple_mean": 6.18,
+  "time_multiple": 6.0,
+  "time_multiple_mean": 5.66,
+  "items_helped": 3,
+  "items_hurt": 0,
+  "items_hurt_2plus": 0,
+  "scoring_overrides": [],
+  "scoring_hand_check": "all wrong thinking-off runs in part A were read by hand (C03 x3, C06 x2, L04 x1): each is a genuinely wrong answer, no override needed"
+ },
+ "examples": {
+  "cold_open": {
+   "puzzle_id": "C03",
+   "seed": 0,
+   "wall_s": 11.137,
+   "seconds": 11,
+   "recorded_seconds": null,
+   "reasoning_tokens": 444,
+   "answer": "4",
+   "correct": true,
+   "reasoning_excerpt": "Okay, let's see. The Python code given is:\n\ns = \"banana\"\nprint(s.count(\"an\") + s.find(\"n\"))\n\nHmm, I need to figure out what this prints. Let me break it down step by step.\n\nFirst, the string s is \"banana\". Let me write that out: b, a, n, a, n, a. So positions 0 to 5.\n\nNow, the first part is s.count(\"an\"). The count method counts the number of non-overlapping occurrences of the substring \"an\" in s. Let me check. Let's look through the string.\n\nLooking at each pair of consecutive characters:\n\nPositions 0-1: 'ba' \u2192 not 'an'.\nPositions 1-2: 'an' \u2192 yes, that's one.\nPositions 2-3: 'na' \u2192 no.\nPositions 3-4: 'an' \u2192 yes, that's two.\nPositions 4-5: 'na' \u2192 no.\n\nSo there are two occurrences of \"an\". So s.count(\"an\") is 2.\n\nNext part is s.find(\"n\"). The find method returns the lowest index of the substring \"n\" in the string. Let's see where the 'n's are. In \"banana\", the first 'n' is at index 2. The next 'n' is at index 4. So the first occurrence is index 2. Therefore, s.find(\"n\") returns 2.\n\nAdding those two results: 2 + 2 = 4. So the print statement outputs 4.\n\nWait, but wait. Let me double-check. The string is \"banana\". Let me count the 'an's again. The substring \"an\" occurs at positions 1-2 (a at 1, n at 2) and 3-4 (a at 3, n at 4). So that's two times. So count is 2. Then find(\"n\") is 2. So 2 + 2 is 4. So the answer should be 4. So the program prints 4. Therefore, the answer is 4."
+  }
+ },
+ "budget": {
+  "budgets": [
+   256,
+   512,
+   1024,
+   2048,
+   4096
+  ],
+  "rows": [
+   {
+    "budget": 256,
+    "n": 40,
+    "correct": 37,
+    "forced": 36,
+    "over_budget": 0,
+    "reasoning_tokens_mean": 270.2,
+    "wall_s_mean": 7.6082
+   },
+   {
+    "budget": 512,
+    "n": 40,
+    "correct": 38,
+    "forced": 20,
+    "over_budget": 0,
+    "reasoning_tokens_mean": 450.55,
+    "wall_s_mean": 12.871
+   },
+   {
+    "budget": 1024,
+    "n": 40,
+    "correct": 40,
+    "forced": 6,
+    "over_budget": 0,
+    "reasoning_tokens_mean": 586.625,
+    "wall_s_mean": 15.6456
+   },
+   {
+    "budget": 2048,
+    "n": 40,
+    "correct": 40,
+    "forced": 1,
+    "over_budget": 0,
+    "reasoning_tokens_mean": 631.925,
+    "wall_s_mean": 16.4392
+   },
+   {
+    "budget": 4096,
+    "n": 40,
+    "correct": 40,
+    "forced": 0,
+    "over_budget": 0,
+    "reasoning_tokens_mean": 645.1,
+    "wall_s_mean": 16.3554
+   }
+  ],
+  "unlimited": {
+   "n": 40,
+   "correct": 40
+  },
+  "knee": 256
+ },
+ "spec": {
+  "methods": [
+   "none",
+   "draft_n3",
+   "draft_n8",
+   "ngram_simple"
+  ],
+  "workloads": [
+   "quote",
+   "prose",
+   "code",
+   "think"
+  ],
+  "server_ctx": 4096,
+  "servers": {
+   "none": {
+    "0": {
+     "speculative": false,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/none-r0.file.log --spec-type none"
+    },
+    "1": {
+     "speculative": false,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/none-r1.file.log --spec-type none"
+    },
+    "2": {
+     "speculative": false,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/none-r2.file.log --spec-type none"
+    }
+   },
+   "draft_n3": {
+    "0": {
+     "speculative": true,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/draft_n3-r0.file.log -md <T7>/models/Qwen3-0.6B-Q8_0.gguf -ngld all --spec-type draft-simple"
+    },
+    "1": {
+     "speculative": true,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/draft_n3-r1.file.log -md <T7>/models/Qwen3-0.6B-Q8_0.gguf -ngld all --spec-type draft-simple"
+    },
+    "2": {
+     "speculative": true,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/draft_n3-r2.file.log -md <T7>/models/Qwen3-0.6B-Q8_0.gguf -ngld all --spec-type draft-simple"
+    }
+   },
+   "draft_n8": {
+    "0": {
+     "speculative": true,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/draft_n8-r0.file.log -md <T7>/models/Qwen3-0.6B-Q8_0.gguf -ngld all --spec-type draft-simple --spec-draft-n-max 8"
+    },
+    "1": {
+     "speculative": true,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/draft_n8-r1.file.log -md <T7>/models/Qwen3-0.6B-Q8_0.gguf -ngld all --spec-type draft-simple --spec-draft-n-max 8"
+    },
+    "2": {
+     "speculative": true,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/draft_n8-r2.file.log -md <T7>/models/Qwen3-0.6B-Q8_0.gguf -ngld all --spec-type draft-simple --spec-draft-n-max 8"
+    }
+   },
+   "ngram_simple": {
+    "0": {
+     "speculative": true,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/ngram_simple-r0.file.log --spec-type ngram-simple"
+    },
+    "1": {
+     "speculative": true,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/ngram_simple-r1.file.log --spec-type ngram-simple"
+    },
+    "2": {
+     "speculative": true,
+     "command": "~/llama.cpp/build/bin/llama-server -m <T7>/models/Qwen3-8B-Q4_K_M.gguf --jinja --reasoning-format deepseek -c 4096 -np 1 -ngl all --cache-ram 0 --port 8080 --log-file ~/ep22-lab/thinking/spec-logs/ngram_simple-r2.file.log --spec-type ngram-simple"
+    }
+   }
+  },
+  "think_parse_check": {
+   "content": "",
+   "reasoning_content": "Okay, so I need to find all three-digit numbers where the digits add up to 20 and the number itself is divisible by 7. Let me think about how to approach this step by step.\n\nFirst, let's recall that a",
+   "predicted_n": 64,
+   "rule": "reasoning_content holds the tokens and content is empty"
+  },
+  "think_attempts": {
+   "T1": [
+    0,
+    1,
+    2
+   ],
+   "T2": [
+    0,
+    1,
+    2
+   ],
+   "T3": [
+    0,
+    1,
+    2
+   ],
+   "borrowed": []
+  },
+  "cells": {
+   "none": {
+    "quote": {
+     "n": 9,
+     "tps_mean": 37.4628,
+     "tps_runs": [
+      40.24,
+      40.86,
+      40.53,
+      41.68,
+      41.46,
+      42.2,
+      29.2,
+      29.31,
+      31.67
+     ],
+     "draft_n": 0,
+     "draft_n_accepted": 0,
+     "acceptance": null,
+     "log_acceptance_lines": 0,
+     "zero_draft_requests": 9
+    },
+    "prose": {
+     "n": 9,
+     "tps_mean": 37.9556,
+     "tps_runs": [
+      40.65,
+      40.34,
+      40.92,
+      42.26,
+      42.36,
+      41.94,
+      31.21,
+      31.04,
+      30.89
+     ],
+     "draft_n": 0,
+     "draft_n_accepted": 0,
+     "acceptance": null,
+     "log_acceptance_lines": 0,
+     "zero_draft_requests": 9
+    },
+    "code": {
+     "n": 9,
+     "tps_mean": 37.9718,
+     "tps_runs": [
+      40.56,
+      40.38,
+      40.67,
+      41.59,
+      41.62,
+      41.52,
+      31.13,
+      32.3,
+      31.99
+     ],
+     "draft_n": 0,
+     "draft_n_accepted": 0,
+     "acceptance": null,
+     "log_acceptance_lines": 0,
+     "zero_draft_requests": 9
+    },
+    "think": {
+     "n": 9,
+     "tps_mean": 38.8446,
+     "tps_runs": [
+      39.96,
+      39.99,
+      40.1,
+      41.19,
+      41.55,
+      41.83,
+      31.66,
+      34.49,
+      38.83
+     ],
+     "draft_n": 0,
+     "draft_n_accepted": 0,
+     "acceptance": null,
+     "log_acceptance_lines": 0,
+     "zero_draft_requests": 9,
+     "think_only_share": 1.0
+    }
+   },
+   "draft_n3": {
+    "quote": {
+     "n": 9,
+     "tps_mean": 31.78,
+     "tps_runs": [
+      31.91,
+      32.27,
+      32.78,
+      31.71,
+      32.23,
+      32.73,
+      31.28,
+      29.04,
+      32.07
+     ],
+     "draft_n": 1341,
+     "draft_n_accepted": 1323,
+     "acceptance": 0.9866,
+     "log_acceptance_lines": 9,
+     "zero_draft_requests": 0
+    },
+    "prose": {
+     "n": 9,
+     "tps_mean": 17.578,
+     "tps_runs": [
+      17.46,
+      16.81,
+      18.6,
+      17.49,
+      16.79,
+      18.79,
+      17.23,
+      16.49,
+      18.54
+     ],
+     "draft_n": 5949,
+     "draft_n_accepted": 2280,
+     "acceptance": 0.3833,
+     "log_acceptance_lines": 9,
+     "zero_draft_requests": 0
+    },
+    "code": {
+     "n": 9,
+     "tps_mean": 24.6877,
+     "tps_runs": [
+      25.65,
+      26.73,
+      21.25,
+      26.04,
+      26.85,
+      21.35,
+      26.06,
+      26.93,
+      21.35
+     ],
+     "draft_n": 3366,
+     "draft_n_accepted": 2283,
+     "acceptance": 0.6783,
+     "log_acceptance_lines": 9,
+     "zero_draft_requests": 0
+    },
+    "think": {
+     "n": 9,
+     "tps_mean": 26.6785,
+     "tps_runs": [
+      26.09,
+      26.96,
+      26.86,
+      26.34,
+      27.02,
+      26.76,
+      26.37,
+      26.98,
+      26.73
+     ],
+     "draft_n": 8403,
+     "draft_n_accepted": 6399,
+     "acceptance": 0.7615,
+     "log_acceptance_lines": 9,
+     "zero_draft_requests": 0,
+     "think_only_share": 1.0
+    }
+   },
+   "draft_n8": {
+    "quote": {
+     "n": 9,
+     "tps_mean": 53.5738,
+     "tps_runs": [
+      53.59,
+      51.92,
+      55.4,
+      53.18,
+      51.42,
+      55.13,
+      53.67,
+      52.11,
+      55.74
+     ],
+     "draft_n": 1632,
+     "draft_n_accepted": 1572,
+     "acceptance": 0.9632,
+     "log_acceptance_lines": 9,
+     "zero_draft_requests": 0
+    },
+    "prose": {
+     "n": 9,
+     "tps_mean": 14.7955,
+     "tps_runs": [
+      15.24,
+      13.77,
+      15.9,
+      15.08,
+      13.31,
+      15.43,
+      15.31,
+      13.69,
+      15.43
+     ],
+     "draft_n": 14184,
+     "draft_n_accepted": 2478,
+     "acceptance": 0.1747,
+     "log_acceptance_lines": 9,
+     "zero_draft_requests": 0
+    },
+    "code": {
+     "n": 9,
+     "tps_mean": 29.032,
+     "tps_runs": [
+      33.22,
+      34.33,
+      20.63,
+      32.55,
+      33.03,
+      20.73,
+      32.44,
+      33.89,
+      20.47
+     ],
+     "draft_n": 5808,
+     "draft_n_accepted": 2667,
+     "acceptance": 0.4592,
+     "log_acceptance_lines": 9,
+     "zero_draft_requests": 0
+    },
+    "think": {
+     "n": 9,
+     "tps_mean": 33.5114,
+     "tps_runs": [
+      32.6,
+      34.55,
+      33.61,
+      32.17,
+      34.53,
+      33.54,
+      32.44,
+      34.56,
+      33.61
+     ],
+     "draft_n": 13419,
+     "draft_n_accepted": 7527,
+     "acceptance": 0.5609,
+     "log_acceptance_lines": 9,
+     "zero_draft_requests": 0,
+     "think_only_share": 1.0
+    }
+   },
+   "ngram_simple": {
+    "quote": {
+     "n": 9,
+     "tps_mean": 54.2855,
+     "tps_runs": [
+      36.7,
+      85.55,
+      41.98,
+      36.87,
+      86.51,
+      42.24,
+      35.45,
+      83.61,
+      39.67
+     ],
+     "draft_n": 2448,
+     "draft_n_accepted": 687,
+     "acceptance": 0.2806,
+     "log_acceptance_lines": 6,
+     "zero_draft_requests": 3
+    },
+    "prose": {
+     "n": 9,
+     "tps_mean": 40.4408,
+     "tps_runs": [
+      42.01,
+      41.28,
+      40.19,
+      41.81,
+      40.63,
+      40.19,
+      39.83,
+      39.65,
+      38.39
+     ],
+     "draft_n": 144,
+     "draft_n_accepted": 0,
+     "acceptance": 0.0,
+     "log_acceptance_lines": 3,
+     "zero_draft_requests": 6
+    },
+    "code": {
+     "n": 9,
+     "tps_mean": 39.0604,
+     "tps_runs": [
+      37.99,
+      38.38,
+      38.87,
+      39.89,
+      40.48,
+      41.97,
+      37.78,
+      37.83,
+      38.34
+     ],
+     "draft_n": 144,
+     "draft_n_accepted": 3,
+     "acceptance": 0.0208,
+     "log_acceptance_lines": 3,
+     "zero_draft_requests": 6
+    },
+    "think": {
+     "n": 9,
+     "tps_mean": 38.9079,
+     "tps_runs": [
+      39.93,
+      39.89,
+      40.56,
+      41.59,
+      40.99,
+      40.47,
+      37.38,
+      38.05,
+      31.31
+     ],
+     "draft_n": 546,
+     "draft_n_accepted": 33,
+     "acceptance": 0.0604,
+     "log_acceptance_lines": 3,
+     "zero_draft_requests": 6,
+     "think_only_share": 1.0
+    }
+   }
+  },
+  "baseline_tps": 37.9556,
+  "draft_best": "draft_n8",
+  "draftmodel_change_by_workload": {
+   "quote": 0.4301,
+   "prose": -0.6102,
+   "code": -0.2354,
+   "think": -0.1373
+  },
+  "draftmodel_change": -0.1382,
+  "draft_acceptance": 0.4065,
+  "ngram": {
+   "quote_speedup": 1.45,
+   "quote_acceptance": 0.2806,
+   "prose_change": 0.0655,
+   "code_change": 0.0287,
+   "think_change": 0.0016
+  },
+  "lossless": {
+   "pairs": 27,
+   "identical": 22,
+   "mismatches": [
+    {
+     "prompt_id": "P2",
+     "method": "draft_n3",
+     "first_diff_char": 464,
+     "none_context": " chill outside. The scent of fresh bread fills the air\u2014warm, yeasty, and invitin",
+     "method_context": " chill outside. The scent of fresh bread\u2014warm, golden, and slightly sweet\u2014wafts ",
+     "text_none": "The morning air is cool and damp, carrying the scent of wet earth and distant thunder. I step out of my small bakery, the wooden door creaking softly behind me, and inhale the fresh, crisp morning. The sky is a heavy gray, and the rain has just begun to fall, a gentle drizzle that mists the cobblestone street and turns the world into a soft, blurred painting.\n\nInside the bakery, the warmth is a comforting contrast to the chill outside. The scent of fresh bread fills the air\u2014warm, yeasty, and inviting. I pull the oven door open, and the golden light spills out, illuminating the rows of loaves waiting to be cooled. The rhythmic sound of the oven timer is my morning companion, a steady reminder that today, like every day, begins with the promise of bread.\n\nThe rain taps lightly against the windows, a soft melody that blends with the low hum of the espresso machine. I knead dough with practiced hands, the rhythm of my work a quiet conversation with the day. The dough is soft and pliant, responding to my touch as if it knows the shape I want it to take. I think of the customers who will come in soon\u2014some regulars, others just passing by, drawn in by the smell of fresh pastries and warm coffee.\n\nThe rain slows as the sun peeks through the clouds, casting a golden glow over the bakery\u2019s small sign. I glance out the window, watching the rainwater pool on the pavement, reflecting the soft light like a mirror. A few customers have already arrived, their umbrellas dripping as they step inside, their faces lit with the same warmth that fills the room.\n\nI arrange the morning\u2019s pastries on the counter\u2014croissants flaky and golden, scones with a hint of lavender, and a fresh batch of cinnamon rolls. The scent of butter and sugar lingers in the air, mingling with the earthy aroma of the rain outside. It\u2019s a familiar comfort, a reminder that even on the grayest of mornings, there is warmth to be found.\n\nAs the rain continues to fall, I smile, knowing that this is the rhythm of my life\u2014simple, steady, and filled with the quiet joy of making something beautiful from the ordinary. The bakery is more than a place to bake bread; it\u2019s a haven, a sanctuary where the rain and the warmth of the oven come together in perfect harmony.",
+     "text_method": "The morning air is cool and damp, carrying the scent of wet earth and distant thunder. I step out of my small bakery, the wooden door creaking softly behind me, and inhale the fresh, crisp morning. The sky is a heavy gray, and the rain has just begun to fall, a gentle drizzle that mists the cobblestone street and turns the world into a soft, blurred painting.\n\nInside the bakery, the warmth is a comforting contrast to the chill outside. The scent of fresh bread\u2014warm, golden, and slightly sweet\u2014wafts through the air, mingling with the faint aroma of cinnamon and vanilla. The oven hums softly, and the steam from the loaves rising from the rack creates a gentle haze. I run my fingers over the smooth surface of the counter, checking the temperature of the dough, and smile at the rhythm of the morning.\n\nThe rain has a way of making everything feel slower, more deliberate. I pull the first batch of croissants from the oven, their flaky layers glistening with butter. The morning light filters through the dusty windows, casting a soft glow over the pastries and the rows of jars filled with jams and preserves. The sound of the rain is a gentle lull, a reminder that the world outside is still moving, but here, in this small space, time seems to pause.\n\nI glance out the window again, watching the rain patter against the glass. A few customers have already arrived, their umbrellas dripping water as they step inside, their faces lit with the same warmth that fills the bakery. They are regulars, some of them, and they know the routine: a warm cup of coffee, a fresh baguette, and a smile from me.\n\nThe rain continues, steady and soothing, as I arrange the morning\u2019s offerings on the counter. It\u2019s a quiet time, one that I\u2019ve come to cherish. There\u2019s something comforting about the rhythm of the morning, the way the rain seems to echo the soft sounds of the bakery\u2014crackling flames, the gentle clatter of the oven door, the soft hum of the radio playing a familiar tune.\n\nAs the rain slows and the clouds begin to break, I know the day is just beginning. But for now, I\u2019m content, wrapped in the warmth of the bakery, the scent of bread, and the gentle rhythm of a rainy morning.",
+     "rerun_identical_to_none": false
+    },
+    {
+     "prompt_id": "P3",
+     "method": "draft_n3",
+     "first_diff_char": 975,
+     "none_context": "tructure. This process is like when you leave rice out and it becomes hard again",
+     "method_context": "tructure. This process is like when you freeze a cooked rice dish \u2014 the grains b",
+     "text_none": "Bread goes stale because it loses moisture and the starches in it start to change over time. When you first bake bread, it's soft and fresh because the heat from the oven makes the dough rise and the starches in the flour absorb water. This creates a moist, chewy texture that we all love.\n\nBut once the bread is out of the oven, it starts to cool down. As it cools, the moisture inside the bread begins to move out of the crumb and into the crust. This makes the bread feel dry and less pleasant to eat. That's why you might notice the crust getting harder and the inside becoming less soft over time.\n\nAnother reason bread goes stale is because of something called \"starch retrogradation.\" Starch is a type of sugar that's found in flour. When you bake bread, the starches are cooked and become gelatinized, which means they're soft and hold onto water. But once the bread cools, the starches start to settle back into a more rigid structure. This process is like when you leave rice out and it becomes hard again. The starches in the bread do something similar, making the bread feel drier and less fluffy.\n\nThis process happens slowly over time, especially if the bread is stored in a dry place or exposed to air. The longer the bread sits, the more the starches change and the more moisture is lost. That's why you might find that bread stored in a cool, dry place becomes stale faster than bread stored in a more humid environment.\n\nTo keep bread fresh longer, you can store it in a cool, dark place, or even in the refrigerator. Some people even freeze bread to keep it fresh for weeks. When you want to eat stale bread again, you can try warming it up in the oven or toaster, which can help restore some of the moisture and softness.\n\nSo, in short, bread goes stale because it loses moisture and the starches in it change over time. These changes make the bread less soft and more dry, which is why we often prefer to eat it fresh. But with a little care, you can enjoy your bread for longer!",
+     "text_method": "Bread goes stale because it loses moisture and the starches in it start to change over time. When you first bake bread, it's soft and fresh because the heat from the oven makes the dough rise and the starches in the flour absorb water. This creates a moist, chewy texture that we all love.\n\nBut once the bread is out of the oven, it starts to cool down. As it cools, the moisture inside the bread begins to move out of the crumb and into the crust. This makes the bread feel dry and less pleasant to eat. That's why you might notice the crust getting harder and the inside becoming less soft over time.\n\nAnother reason bread goes stale is because of something called \"starch retrogradation.\" Starch is a type of sugar that's found in flour. When you bake bread, the starches are cooked and become gelatinized, which means they're soft and hold onto water. But once the bread cools, the starches start to settle back into a more rigid structure. This process is like when you freeze a cooked rice dish \u2014 the grains become firm again. In bread, this makes the crumb drier and harder.\n\nThis process happens slowly over time, even if the bread is stored in a cool, dry place. The longer the bread sits, the more the starches change and the more moisture is lost. That's why you might find that bread stored in a sealed bag or container still goes stale after a few days \u2014 it's not just about the air drying it out, but also about the chemical changes happening inside the bread.\n\nTo keep bread fresh longer, you can store it in a cool, dry place, or you can freeze it. Freezing stops the starch retrogradation and moisture loss, so the bread stays soft for a longer time. If you want to revive stale bread, you can toast it or put it in the oven for a few minutes to rehydrate it and make it soft again.\n\nSo, bread goes stale because of a combination of moisture loss and chemical changes in the starches. It's a natural process that happens over time, and there are ways to slow it down or even reverse it if you're willing to put in a little effort.",
+     "rerun_identical_to_none": false
+    },
+    {
+     "prompt_id": "P2",
+     "method": "draft_n8",
+     "first_diff_char": 464,
+     "none_context": " chill outside. The scent of fresh bread fills the air\u2014warm, yeasty, and invitin",
+     "method_context": " chill outside. The scent of fresh bread\u2014warm, golden, and slightly sweet\u2014wafts ",
+     "text_none": "The morning air is cool and damp, carrying the scent of wet earth and distant thunder. I step out of my small bakery, the wooden door creaking softly behind me, and inhale the fresh, crisp morning. The sky is a heavy gray, and the rain has just begun to fall, a gentle drizzle that mists the cobblestone street and turns the world into a soft, blurred painting.\n\nInside the bakery, the warmth is a comforting contrast to the chill outside. The scent of fresh bread fills the air\u2014warm, yeasty, and inviting. I pull the oven door open, and the golden light spills out, illuminating the rows of loaves waiting to be cooled. The rhythmic sound of the oven timer is my morning companion, a steady reminder that today, like every day, begins with the promise of bread.\n\nThe rain taps lightly against the windows, a soft melody that blends with the low hum of the espresso machine. I knead dough with practiced hands, the rhythm of my work a quiet conversation with the day. The dough is soft and pliant, responding to my touch as if it knows the shape I want it to take. I think of the customers who will come in soon\u2014some regulars, others just passing by, drawn in by the smell of fresh pastries and warm coffee.\n\nThe rain slows as the sun peeks through the clouds, casting a golden glow over the bakery\u2019s small sign. I glance out the window, watching the rainwater pool on the pavement, reflecting the soft light like a mirror. A few customers have already arrived, their umbrellas dripping as they step inside, their faces lit with the same warmth that fills the room.\n\nI arrange the morning\u2019s pastries on the counter\u2014croissants flaky and golden, scones with a hint of lavender, and a fresh batch of cinnamon rolls. The scent of butter and sugar lingers in the air, mingling with the earthy aroma of the rain outside. It\u2019s a familiar comfort, a reminder that even on the grayest of mornings, there is warmth to be found.\n\nAs the rain continues to fall, I smile, knowing that this is the rhythm of my life\u2014simple, steady, and filled with the quiet joy of making something beautiful from the ordinary. The bakery is more than a place to bake bread; it\u2019s a haven, a sanctuary where the rain and the warmth of the oven come together in perfect harmony.",
+     "text_method": "The morning air is cool and damp, carrying the scent of wet earth and distant thunder. I step out of my small bakery, the wooden door creaking softly behind me, and inhale the fresh, crisp morning. The sky is a heavy gray, and the rain has just begun to fall, a gentle drizzle that mists the cobblestone street and turns the world into a soft, blurred painting.\n\nInside the bakery, the warmth is a comforting contrast to the chill outside. The scent of fresh bread\u2014warm, golden, and slightly sweet\u2014wafts through the air, mingling with the faint aroma of cinnamon and vanilla. The oven hums softly, and the steam from the loaves rising from the rack creates a gentle haze. I run my fingers over the smooth surface of the counter, checking the temperature of the dough, and smile at the rhythm of the morning.\n\nThe rain has a way of making everything feel slower, more deliberate. I pull the first batch of croissants from the oven, their flaky layers glistening with butter. The morning light filters through the dusty windows, casting a soft glow over the pastries and the rows of jars filled with jams and preserves. The sound of the rain is a gentle lull, a reminder that the world outside is still moving, but here, in this small space, time seems to pause.\n\nI glance out the window again, watching the rain patter against the glass. A few customers have already arrived, their umbrellas dripping water as they step inside, their faces lit with the same warmth that fills the bakery. They are regulars, some of them, and they know the routine: a warm cup of coffee, a fresh baguette, and a smile from me.\n\nThe rain continues, steady and soothing, as I arrange the morning\u2019s offerings on the counter. It\u2019s a quiet time, one that I\u2019ve come to cherish. There\u2019s something comforting about the rhythm of the morning, the way the rain seems to echo the soft sounds of the bakery\u2014crackling flames, the gentle clatter of the oven door, the soft hum of the radio playing a familiar tune.\n\nAs the rain slows and the clouds begin to break, I know the day is just beginning. But for now, I\u2019m content, wrapped in the warmth of the bakery, the scent of bread, and the gentle rhythm of a rainy morning.",
+     "rerun_identical_to_none": false
+    },
+    {
+     "prompt_id": "P3",
+     "method": "draft_n8",
+     "first_diff_char": 975,
+     "none_context": "tructure. This process is like when you leave rice out and it becomes hard again",
+     "method_context": "tructure. This process is like when you freeze a cooked rice dish \u2014 the grains b",
+     "text_none": "Bread goes stale because it loses moisture and the starches in it start to change over time. When you first bake bread, it's soft and fresh because the heat from the oven makes the dough rise and the starches in the flour absorb water. This creates a moist, chewy texture that we all love.\n\nBut once the bread is out of the oven, it starts to cool down. As it cools, the moisture inside the bread begins to move out of the crumb and into the crust. This makes the bread feel dry and less pleasant to eat. That's why you might notice the crust getting harder and the inside becoming less soft over time.\n\nAnother reason bread goes stale is because of something called \"starch retrogradation.\" Starch is a type of sugar that's found in flour. When you bake bread, the starches are cooked and become gelatinized, which means they're soft and hold onto water. But once the bread cools, the starches start to settle back into a more rigid structure. This process is like when you leave rice out and it becomes hard again. The starches in the bread do something similar, making the bread feel drier and less fluffy.\n\nThis process happens slowly over time, especially if the bread is stored in a dry place or exposed to air. The longer the bread sits, the more the starches change and the more moisture is lost. That's why you might find that bread stored in a cool, dry place becomes stale faster than bread stored in a more humid environment.\n\nTo keep bread fresh longer, you can store it in a cool, dark place, or even in the refrigerator. Some people even freeze bread to keep it fresh for weeks. When you want to eat stale bread again, you can try warming it up in the oven or toaster, which can help restore some of the moisture and softness.\n\nSo, in short, bread goes stale because it loses moisture and the starches in it change over time. These changes make the bread less soft and more dry, which is why we often prefer to eat it fresh. But with a little care, you can enjoy your bread for longer!",
+     "text_method": "Bread goes stale because it loses moisture and the starches in it start to change over time. When you first bake bread, it's soft and fresh because the heat from the oven makes the dough rise and the starches in the flour absorb water. This creates a moist, chewy texture that we all love.\n\nBut once the bread is out of the oven, it starts to cool down. As it cools, the moisture inside the bread begins to move out of the crumb and into the crust. This makes the bread feel dry and less pleasant to eat. That's why you might notice the crust getting harder and the inside becoming less soft over time.\n\nAnother reason bread goes stale is because of something called \"starch retrogradation.\" Starch is a type of sugar that's found in flour. When you bake bread, the starches are cooked and become gelatinized, which means they're soft and hold onto water. But once the bread cools, the starches start to settle back into a more rigid structure. This process is like when you freeze a cooked rice dish \u2014 the grains become firm again. In bread, this makes the crumb drier and harder.\n\nThis process happens slowly over time, even if the bread is stored in a cool, dry place. The longer the bread sits, the more the starches change and the more moisture is lost. That's why you might find that bread stored in a sealed bag or container still goes stale after a few days \u2014 it's not just about the air drying it out, but also about the chemical changes happening inside the bread.\n\nTo keep bread fresh longer, you can store it in a cool, dry place, or you can freeze it. Freezing stops the starch retrogradation and moisture loss, so the bread stays soft for a longer time. If you want to revive stale bread, you can toast it or put it in the oven for a few minutes to rehydrate it and make it soft again.\n\nSo, bread goes stale because of a combination of moisture loss and chemical changes in the starches. It's a natural process that happens over time, and there are ways to slow it down or even reverse it if you know what to do.",
+     "rerun_identical_to_none": false
+    },
+    {
+     "prompt_id": "K3",
+     "method": "draft_n8",
+     "first_diff_char": 1113,
+     "none_context": " like:\n  - Search input suggestions\n  - Form validation\n  - Window resize events",
+     "method_context": " like:\n  - Search input suggestions\n  - Resize event handlers\n  - Form input val",
+     "text_none": "Here's a JavaScript function `debounce(fn, ms)` that delays the execution of a function until a certain amount of time has passed without it being called again. This is commonly used for optimizing performance in event-driven applications like search or resizing.\n\n### \u2705 Function Definition:\n\n```javascript\nfunction debounce(fn, ms) {\n  let timer;\n  return function (...args) {\n    clearTimeout(timer);\n    timer = setTimeout(() => {\n      fn.apply(this, args);\n    }, ms);\n  };\n}\n```\n\n### \u2705 Usage Example:\n\n```javascript\n// Example function to debounce\nfunction logMessage(message) {\n  console.log(`Message: ${message}`);\n}\n\n// Debounce the logMessage function with a 300ms delay\nconst debouncedLog = debounce(logMessage, 300);\n\n// Simulate rapid calls\ndebouncedLog(\"Hello\");\ndebouncedLog(\"World\");\ndebouncedLog(\"!\");\n```\n\n### \u2705 Explanation:\n\n- The `debounce` function returns a new function that, when called, clears any existing timeout and sets a new one.\n- The original function `fn` is only called after `ms` milliseconds of inactivity.\n- This is useful for scenarios like:\n  - Search input suggestions\n  - Form validation\n  - Window resize events\n  - Scroll events\n\nLet me know if you'd like a version that supports leading or trailing edge debouncing!",
+     "text_method": "Here's a JavaScript function `debounce(fn, ms)` that delays the execution of a function until a certain amount of time has passed without it being called again. This is commonly used for optimizing performance in event-driven applications like search or resizing.\n\n### \u2705 Function Definition:\n\n```javascript\nfunction debounce(fn, ms) {\n  let timer;\n  return function (...args) {\n    clearTimeout(timer);\n    timer = setTimeout(() => {\n      fn.apply(this, args);\n    }, ms);\n  };\n}\n```\n\n### \u2705 Usage Example:\n\n```javascript\n// Example function to debounce\nfunction logMessage(message) {\n  console.log(`Message: ${message}`);\n}\n\n// Debounce the logMessage function with a 300ms delay\nconst debouncedLog = debounce(logMessage, 300);\n\n// Simulate rapid calls\ndebouncedLog(\"Hello\");\ndebouncedLog(\"World\");\ndebouncedLog(\"!\");\n```\n\n### \u2705 Explanation:\n\n- The `debounce` function returns a new function that, when called, clears any existing timeout and sets a new one.\n- The original function `fn` is only called after `ms` milliseconds of inactivity.\n- This is useful for scenarios like:\n  - Search input suggestions\n  - Resize event handlers\n  - Form input validation\n\nLet me know if you'd like a version that supports leading or trailing edge debouncing!",
+     "rerun_identical_to_none": false
+    }
+   ],
+   "first_diff_unit": "characters (the first differing token is not stored: spec-runs keep only content hashes)"
+  }
+ }
+}
